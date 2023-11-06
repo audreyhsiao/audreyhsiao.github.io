@@ -1,7 +1,19 @@
 # my_personal_website
 Building a personal website with HTML, CSS and Javascript
 
+## A Quick look  
 
+::TODO screenshot
+
+
+
+## JS Library I used
+
+- JQuery
+
+- Typed js
+
+  https://mattboldt.com/demos/typed-js/
 
 ## Color palette
 
