@@ -4,6 +4,22 @@
  * Copyright 2014-2021 Froala Labs
  */
 
+.project{
+  display: inline-block;
+  width: 30%;
+  padding:1%;
+  background-color:aqua;
+  border-radius: 25px;
+  margin:1%;
+}
+.project-img{
+  width: auto;
+}
+
+.project-description{
+  color: #1e1e1e;
+  margin:5%;
+}
  /* The actual timeline (the vertical ruler) */
 .timeline {
   position: relative;
