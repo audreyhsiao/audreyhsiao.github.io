@@ -6,20 +6,14 @@
 
 
  .social-media-links{
+  margin-top: 5%;
   width: 430px;
-
   min-height: fit-content;
   flex-direction: column;
   text-transform: uppercase;
   text-decoration: none;
   display: block;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -ms-flex-pack: center;
-  justify-content: center;
-  text-align:center;
-  align-items: center;
-  flex-basis: auto;
+ 
  
  }
 
@@ -39,10 +33,9 @@
 }
 
 .social-item {
-  display: inline-flex;
+  display: inline-flex !important;
   flex-direction: column;
   margin-left: 10%;
-  
   justify-content: center;
   align-items: center;
   
@@ -51,26 +44,28 @@
 .social-item a{
   background-color: #fff;
   border-radius: 50rem;
-  align-items: center;
+  align-items: center !important;
+  text-align: center !important;
   width: 3.5rem;
   height: 3.5rem;
   &:hover {
     background-color: rgba(255, 46, 99);
-    color: #eee !important;
+    color: rgba(225,225,225,0.9);
     transform: scaleX(1.1) scaleY(1.1);
   }
 
 }
 
 .social-item i {
-  align-items: center !important;
-  align-self: center ;
-  width: 5rem;
-  height: 5rem;
+  position:absolute;
+  padding-top: 1rem;
+  display: block;
+  transform: scale(1.4);
+  justify-content: center;
+  width: 3.5rem;
   color: #ff2e63;
   &:hover{
-    color: #fff;
-    transform: scaleX(1.1) scaleY(1.1);
+    color:#eee  !important;
   }
 }
 
@@ -107,24 +102,42 @@ a.menu-btn{
   font-size: 24px !important;
   color:#08D9D6
 }
- /* The actual timeline (the vertical ruler) */
-.timeline {
-  position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
+
+
+.timeline-list {
+  color:white;
+  list-style-type: none;
+ 
 }
 
 /* The actual timeline (the vertical ruler) */
-.timeline::before {
+.timeline-list::before {
   content: '';
   position: absolute;
-  width: 2px;
-  background-color: white;
+  left: 10px;
+  width: 3px !important;
+  background-color: #EAEAEA;
+  border-color: rgba(225,225,225,0.9) !important;
+  border-width: 1px !important;
   top: 0;
   bottom: 0;
-
   margin-left: 2px;
 }
+
+
+.timeline-item::before{
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  left: 8px;
+  background-color:#EAEAEA;
+  border: 1px solid  rgba(225,225,225,0.9) !important;
+  top: 10px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
 
 .resume-block{
   margin-top:15%;
@@ -2641,6 +2654,7 @@ a:focus {
   width: fit-content;
   width: -moz-fit-content;
 }
+
 .u-text-default:empty {
   display: block;
   width: 15px;
@@ -6660,35 +6674,12 @@ img.u-opacity-0,
 .u-search-right .u-search-icon.u-black {
   margin-left: 0.8em;
 }
-.u-social-icons {
-  display: flex;
-}
-.u-social-url {
-  color: inherit;
-  font-size: inherit;
-  font-family: inherit;
-  line-height: inherit;
-  letter-spacing: inherit;
-  text-transform: inherit;
-  font-style: inherit;
-  font-weight: inherit;
-  text-decoration: none;
-  border: 0 none transparent;
-  outline-width: 0;
-  background-color: transparent;
-  margin: 0;
-  -webkit-text-decoration-skip: objects;
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-}
+
 .u-social-icons .u-icon {
   display: flex;
   height: 100% !important;
 }
-.u-social-icons .u-social-url,
-.u-social-icons .u-social-url:hover {
-  color: currentColor;
-}
+
 .u-social-icons a {
   height: 100%;
   display: inline-block;
