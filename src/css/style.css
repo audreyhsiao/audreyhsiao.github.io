@@ -75,11 +75,13 @@
 
  .description{
     color: #c0c0c0;
+    opacity: 80%;
  }
 
 a.menu-btn{
   text-decoration: none;
   color:#252A34 ;
+  
 }
 .project{
   display: inline-block;
@@ -90,7 +92,10 @@ a.menu-btn{
   margin:1%;
 }
 .project-img{
+  align-content: center;
   width: auto;
+  background-color:#252A34;
+  
 }
 
 .project-description{
