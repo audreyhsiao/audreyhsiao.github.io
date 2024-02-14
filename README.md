@@ -2,12 +2,9 @@
 Building a personal website with HTML, CSS and Javascript
 
 ## A Quick look  
+<img width="1511" alt="image" src="https://github.com/audreyhsiao/audreyhsiao.github.io/assets/51323445/9ebfd3f7-95d1-4dee-bc0c-993b99c0894a">
 
-![image-20240214180053313](/Users/ah/Library/Application Support/typora-user-images/image-20240214180053313.png)
 
-![image-20240214180105372](/Users/ah/Library/Application Support/typora-user-images/image-20240214180105372.png)
-
-![image-20240214180128992](/Users/ah/Library/Application Support/typora-user-images/image-20240214180128992.png)
 
 ## JS Library I used
 
