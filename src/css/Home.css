@@ -359,13 +359,7 @@
 	padding-left: 20px;
 }
 
-.u-section-2 . -1 {
-	margin-left: 0;
-	margin-right: 20px;
-	text-transform: uppercase;
-	letter-spacing: 4px;
-	margin-bottom: 0;
-}
+
 
 .u-section-2 .u-text-2 {
 	font-size: 0.1875rem;
@@ -2166,20 +2160,6 @@
 		padding-right: 5px;
 	}
 }
-
-@media (max-width: 575px) {
-	.u-section-8 .u-sheet-1 {
-		min-height: auto;
-	}
-
-	.u-section-8 .u-layout-cell-1 {
-		min-height: auto;
-	}
-
-	.u-section-8 .u-form-1 {
-		width: 270px;
-		margin-bottom: 47px;
-	}
 
 
 
