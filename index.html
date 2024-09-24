@@ -7,6 +7,10 @@
   <title>Home</title>
   <link rel="stylesheet" href="./src/css/style.css" media="screen">
   <link rel="stylesheet" href="./src/css/Home.css" media="screen">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="./src/css/animated.css" media="screen">
+
+
   <!--add icon into the webpage-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -35,12 +39,7 @@
   </script>
 
 
-  <!--meta name="generator" content="Nicepage 5.20.7, nicepage.com"-->
-  <meta name="referrer" content="origin">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
-  </body>
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
@@ -48,8 +47,6 @@
   href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
 <link id="u-page-google-font" rel="stylesheet"
   href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
-
-
 
 
 <script type="application/ld+json">{
@@ -70,7 +67,7 @@
   <header class="u-clearfix u-header u-header" id="sec-43be">
     <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
       <a href="https://audreyxyz.github.io" class="u-image u-logo u-image-1">
-        <img src="./src/images/logo.jpg" class="u-logo-image u-logo-image-1">
+        <img src="./src/images/logo.jpg" class=" logo-image">
       </a>
       <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
         <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
@@ -112,152 +109,200 @@
       </div>
     </div>
   </section>
-  <section class="u-black u-clearfix u-section-2" id="carousel_c50c">
-    <div class="u-clearfix u-sheet u-sheet-1">
-      <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+
+  <section id="aboutMe" class="u-black u-clearfix wrapper animate fadeInDown" style="display: flex;">
+    <div class="u-clearfix u-sheet u-sheet-1 wrapper">
+      <div class="u-clearfix u-expanded-width">
         <div class="u-layout">
-          <div class="u-layout-row">
-            <div class="u-container-style u-layout-cell u-left-cell u-size-30 u-layout-cell-1">
-              <div class="u-container-layout u-container-layout-1">
-                <h3 id="about" class="u-text u-text-1">About me<br>
-                </h3>
-                <div>
-                  <img src="src/images/logo.png" class="w-32" width="430px" id="avatar">
-                </div>
-                <!--div class="card">
-                  <p>
-                 </p>
-                  </div>
-                <!--h2 class="u-text u-text-palette-1-base u-text-2">The Home of Home Search</h2> -->
-                 <p class="u-text description u-text-3">Born in raised in Southern Taiwan, I am now a Computer Sciencestudent at Rice
-                  University.
-                  My academic life focuses on solving real world problems with data/information science technique. For
-                  example, I tackle supply chain problem
-                  with machine learning models.
-                  You can see some of my work in the following section and in the "selected projects" page as well.
-                </p>
-                <div class="social-media-links">
-                  <div class="social-item">
-                    <a href="https://github.com/audreyhsiao?tab=repositories">
-                      <div class="transition-all">
-                        <i class="fa fa-github-square" aria-hidden="true"></i>
-                      </div>
-                    </a>
-                    <span class="social-link-text">Github</span>
-                  </div>
+          <div class=" introduction ">
+            <div class=" u-container-layout " style=" padding-left: 5%;
+              padding-top:5%;padding-bottom: 10%;
+		padding-right: 5%;
+    flex:100%; max-height: 100%; back">
+              <h3 class="u-text u-text-1 animate fadeInDown">About me<br>
+              </h3>
+              <div class="fadeInDown" style="display: flex;
+                 justify-content: center; 
+                align-items:center;
+                padding: 3%;">
+                <img src="src/images/logo.png" " width=" 50%" id="avatar">
+              </div>
+              <p class="u-text description u-text-3 about">I am currently a Master’s of Computer Science at Rice
+                University with have
+                strong background in integrating technology with diverse fields.
 
-                  <div class="social-item">
-                    <a href="https://autographxyz.medium.com/">
-                      <div class="transition-all">
-                        <i class="fa fa-medium" aria-hidden="true"></i>
-                      </div>
-                    </a>
-                    <span class="social-link-text">Medium</span>
-                  </div>
-                  <div class="social-item" ">
-                      <a href=" www.linkedin.com/in/audrey-hsiao/">
-                    <i class="fa fa-linkedin-square" aria-hidden="true"></i>
-                    </a>
-                    <span class="social-link-text">LinkedIn</span>
-                  </div>
-                  <div class="social-item" ">
+              <p class=" description about">Born and raised in Taiwan, I am fluent in both Mandarin and English,
+                which enriches my ability to navigate and contribute to global tech discussions. I am excited about
+                leveraging my interdisciplinary background to drive innovation at the intersection of technology and
+                various domains.</p>
+              <p class=" description about">You can see some of my work in the following section and in the "selected
+                projects" page as well.</p>
+
+              </p>
+              <div class="social-media-links">
+                <div class="social-item">
+                  <a href="https://github.com/audreyhsiao?tab=repositories">
+                    <div class="transition-all">
+                      <i class="fa fa-github-square" aria-hidden="true"></i>
+                    </div>
+                  </a>
+                  <span class="social-link-text">Github</span>
+                </div>
+
+                <div class="social-item">
+                  <a href="https://autographxyz.medium.com/">
+                    <div class="transition-all">
+                      <i class="fa fa-medium" aria-hidden="true"></i>
+                    </div>
+                  </a>
+                  <span class="social-link-text">Medium</span>
+                </div>
+                <div class="social-item" ">
+                      <a href=" https://www.linkedin.com/in/audrey-hsiao/">
+                  <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                  </a>
+                  <span class="social-link-text">LinkedIn</span>
+                </div>
+                <div class="social-item" ">
                       <a href=" audreyyj13@gmail.com">
-                    <i class="fa fa-envelope" aria-hidden="true"></i>
-                    </a>
-                    <span class="social-link-text">Gmail</span>
-                  </div>
-
+                  <i class="fa fa-envelope" aria-hidden="true"></i>
+                  </a>
+                  <span class="social-link-text">Gmail</span>
                 </div>
-                <!--p class="u-text u-text-grey-30 u-text-4">Besides my studying in school, I enjoy reading, watching movies and traveling as well.
+
+              </div>
+              <!--p class="u-text u-text-grey-30 u-text-4">Besides my studying in school, I enjoy reading, watching movies and traveling as well.
                       And I messed around with my cameras a lot, you can browse photos I took in the "Gallery" page. There are also fil,I wrote in the "Blog" pages(It's mostly in Chinese)
                       I do believe that the photos I took and essays I wrote are important part of me. </p-->
-              </div>
             </div>
-            <div class="u-container-style u-layout-cell u-right-cell u-size-30 u-layout-cell-5">
-              <div class="u-container-layout u-container-layout-2 u-right-cell  " id="experiences">
-                <div class="u-container-layout u-container-layout-3 resume-block">
-                  <img class="timeline" src="src/logos/book.png" style="width: 40px;margin:12px;">
-                  <h3>Education</h3>
-                  <div class="timeline-list">
-                    <ol class="timeline-item"> Peking University</ol>
-                    <ol class="timeline-item">Yuan Pei College (Liberal Arts College)</ol>
-                    <ol class="timeline-item">Major:Big Data Management and Application </ol>
-                    <ol class="timeline-item">Minor: Sociology</ol>
-                  </div>
+
+            <div class="" style="
+             min-width: 100%;display:flex; 
+             padding:5%;
+             flex-flow: column;flex-wrap: wrap;">
+              <div class="info-board">
+                <div class="skill-title">
+                  <h6>Education</h6>
                 </div>
-                <div class="u-container-layout u-container-layout-3 resume-block">
-                  <img class="" src="src/logos/light-bulb.png" style="width: 40px; margin:12px;">
-                  <h3>Experiences</h3>
-                  <div class="timeline-list">
-                    <ol class="timeline-item">Undergraduate thesis: Graph Neural Network-Based Blockchain Transaction
-                      Analysis </ol>
-                    <ol class="timeline-item">R&D intern at Volkswagen Group China R&D department</ol>
-                    <ol class="timeline-item">Third Prize: National Conference on Supply Chain and Operation Management:
-                      Data-driven competition</ol>
-                  </div>
+                <div class="info">
+                  <h6 class="skill-bullet">Rice University</h6>
+                  <ul>
+                    <li>Master's of Computer Sicence</li>
+                    <li>Relevant Courses: Database Implementation,
+                      Graduate Design and Analysis of Algorithm, Introduction to Computer Network</li>
+                  </ul>
+                  <h6 class="skill-bullet">Peking University</h6>
+                  <ul>
+                    <li>Major: Big Data Application</li>
+                    <li>Relevant Courses: Data Structures and Algorithm, Statistics, Linear Algebra, Machine Learning,
+                      Text Mining, Database Systems,
+                      Object-oriented Programming with Java, Computer Network</li>
+                  </ul>
                 </div>
-                <div class="u-container-layout u-container-layout-3 resume-block">
-                  <img class="" src="src/logos/light-bulb.png" style="width: 40px; margin:12px;">
-                  <h3>Extracurricular</h3>
-                  <div class="timeline-list">
-                    <ol class="timeline-item">Photography</ol>
-                    <ol class="timeline-item">Coffee Brewing</ol>
-                    <ol class="timeline-item">Film review</ol>
-                  </div>
-                </div>
+
+
               </div>
 
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
+              <div class="info-board">
+                <div class="skill-title">
+                  <h6>Skills</h6>
+                </div>
+                <div class="info">
+                  <h6 class="skill-bullet">Programming Languages</h6>
+                  <ul>
+
+                    <li>C++ (Proficient), Python (Proficient), Java (Familiar), SQL (Proficient), HTML/CSS, JavaScript
+                      (Familiar)</li>
+                  </ul>
+                  <h6 class="skill-bullet">Tools & Framework </h6>
+                  <ul>
+                    <li>
+                      Pytorch, MySQL, Pandas, Numpy, MongoDB, Git, NodeJS, React</li>
+                  </ul>
+                  <h6 class="skill-bullet">Applicable Concepts </h6>
+                  <ul>
+                    <li>Object-Oriented Programming, Data Visualization and Analyze, Web development, Ensemble learning</li>
+                  </ul>
+                </div>
+
+
+              </div>
+
+
   </section>
 
-  <section class="u-black u-clearfix u-section-4">
-    <div class="u-clearfix u-sheet u-sheet-1">
-      <div class="u-clearfix u-expanded-width  u-layout-wrap u-layout-wrap-1">
-        
-        <h3>I am specifically interested in deep learning and machine learning applications in business and
-          management.
-        </h3>
+  <div class="wrapper" id="inshort">
+    <div class="glassbox">
+
+      <h2>I am specifically interested in computer science applications in business and
+        management.</h2>
+
+    </div>
+
+    </h2>
+
+
+  </div>
+
+  <div class="wrapper" id="selected-projects">
+    <div class=" section-title">
+      <h2 class="u-text u-text-1">Selected Projects<br>
+      </h2>
+      <!-- <h2>Data Mining and Visualization</h2> -->
+    </div>
+    <p class="u-text description">
+      My academic journey began at Peking University’s YuanPei College, where I majored in Data Science. My love for
+      integrating technology with diverse fields led me to explore
+      groundbreaking projects, such as using graph neural networks(GCN and GAT) for anomaly detection in Bitcoin during
+      my undergraduate thesis.
+
+      Recognizing that emerging technologies like AI are deeply rooted in fundamental computer science principles, I am
+      currently pursuing a Master’s degree in Computer Science at Rice University. Here, I am diving into core areas
+      such as database implementation network and operating system.
+
+
+    </p>
+    <div class="box">
+      <div class="description">
+        <h2>Sentimental Analysis on reviews of the TV series "Empresses in the Palace"</h2>
+        <p>In this project, I collect data from DouBan, Chinese most popular review platform
         </p>
-        <ol class="u-text description "><br>1. Predictive Insights and Decision Support: <br>Management
-          theories are
-          mostly based on assumptions
-          such as stable costs or demands that obey certain distribution functions. However, corporations
-          only held data such as historical sales but not clear variables that could easily fit in
-          management models. Traditionally, corporations adopt statistical approaches such as Sample Average
-          Approximation (SAA) to bridge the gap between theory and practice. Deep learning could forecast
-          future trends, behaviors, and outcomes with a higher degree of accuracy. Businesses can leverage
-          these insights and traditional business models to make proactive decisions.
-        </ol><br>
-        <ol class="u-text description u-text-5">
-          2. Debiasing and feature engineering:<br> Machine learning models can analyze transaction data and
-          identify patterns indicative of fraudulent activity. However, the datasets used in fraud detection
-          are often unbalanced. For instance, my undergraduate thesis focuses on fraud detection and
-          analysis
-          in Bitcoin data, including wallets and transactions. I faced challenges since those data are
-          composed of hidden features and are often labeled as unknown (rather than illicit or licit) due to
-          the decentralization principles of blockchain currencies.
-        </ol>
-
-
       </div>
+
     </div>
-  </section>
+    <div class="box">
+      <div class="description">
+        <h2></h2>
+        <p>The team used OpenAlex API to get data about language models and present visualization with d3.js I am
+          responsible for the data collecting and the visualization of three graphs (the 4th, 5th, and the 6th presented
+          on the website)</p>
+      </div>
+
+    </div>
+    <div class="box">
+      <div class="description">
+        <h2>Data Visualization and Analysis on NLP Publications</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. A sunt rem magni quasi tempore alias nostrum
+          mollitia delectus cupiditate hic unde minima quis officiis, quidem quae quisquam, aperiam porro fugiat?</p>
+      </div>
+
+    </div>
+
+  </div>
 
 
-  <section class="u-black u-clearfix u-section-3" id="carousel_6e36">
+  <section class="u-black u-clearfix u-section-3">
     <div class="u-clearfix u-sheet u-sheet-1">
       <div class="u-clearfix u-expanded-width u-gutter-20 u-layout-wrap u-layout-wrap-1">
         <div class="u-layout">
           <div class="u-layout-row">
-            <div class="u-size-20 u-size-40-md">
+            <div class="u-size-20 u-size-40-md" style="flex: 0 0 33.33333333%;
+            max-width: 33.33333333%;
+            min-width: 33.33333333%;">
               <div class="u-layout-row">
-                <div class="u-container-style u-layout-cell u-left-cell u-size-60 u-layout-cell-1">
+                <div class="u-container-style u-layout-cell u-left-cell u-layout-cell-1" style="flex: 0 0 10%;
+                max-width: 100%;
+                min-width: 100%;">
                   <div class="u-container-layout u-valign-middle-md u-container-layout-1">
                     <h3 class="u-text u-text-1" id="projects">Selected Projects<br>
                     </h3>
@@ -270,7 +315,9 @@
               </div>
             </div>
 
-            <div class="u-size-40 u-size-60-md">
+            <div class=" u-size-60-md" style="flex: 0 0 60%;
+            max-width: 80%;
+            min-width: 50%;">
               <div class="u-layout-col">
                 <div class="u-container-style u-layout-cell u-right-cell u-size-40 u-layout-cell-3">
                   <div class="u-container-layout u-container-layout-3">
@@ -331,48 +378,10 @@
   </section>
 
 
-  
 
-  <div class="wrapper">
-    <div class=" section-title">
-    <h3 class="u-text u-text-1">Selected Projects<br>
-    </h3>
-    <h2 >Data Mining and Visualization</h2>
-  </div>
-    <p class="u-text description">
-      Data Mining is the process of discovering patterns and relationships within large datasets, uncovering
-      valuable insights that may not be apparent through conventional analysis.
-      By extracting knowledge from raw data, it enables informed decision-making and strategic planning. On
-      top of that, Data Visualization transforms complex datasets into intuitive
-      visual representations. Charts, graphs, and interactive visuals make it easier for individuals to
-      grasp patterns, trends, and outliers. Visualization bridges the gap between raw data and actionable
-      insights, promoting better comprehension and communication.
-    </p>
-  <div class="box">
-    <div class="description">
-        <h2>Sentimental Analysis on reviews of the TV series "Empresses in the Palace"（後宮甄嬛傳）</h2>
-        <p>In this project, I collect data from DouBan, Chinese most popular review platform
-        </p>
-        </div>
-      
-    </div>
-    <div class="box">
-      <div class="description">
-          <h2>Data Visualization on Beijing Housing Price</h2>
-          <p>The team used OpenAlex API to get data about language models and present visualization with d3.js I am responsible for the data collecting and the visualization of three graphs (the 4th, 5th, and the 6th presented on the website)</p>
-          </div>
-        
-      </div>
-    <div class="box">
-      <div class="description">
-          <h2>Data Visualization and Analysis on NLP Publications</h2>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. A sunt rem magni quasi tempore alias nostrum mollitia delectus cupiditate hic unde minima quis officiis, quidem quae quisquam, aperiam porro fugiat?</p>
-          </div>
-        
-      </div>
-      
-  </div>
-      
+
+
+
 
   <section class="u-black u-clearfix u-section-8" id="carousel_fa10">
     <div class="u-clearfix u-sheet u-sheet-1">
@@ -416,8 +425,7 @@
             <div class="u-align-right u-container-style u-layout-cell u-right-cell u-size-30 u-layout-cell-2">
               <div class="u-container-layout u-valign-middle u-container-layout-2">
                 <h3 class="u-text u-text-1">happy to see you</h3>
-                <h2 class="u-text u-text-palette-1-base u-text-2">Contact Me<br>
-                </h2>
+
                 <p class="u-text u-text-grey-30 u-text-3">Connect with me!
                 </p>
 
@@ -430,8 +438,6 @@
   </section>
 
 
-  <footer class="u-align-center u-clearfix u-footer" id="">
-    <div class="u-clearfix u-sheet u-sheet-1">
 
 </body>
 

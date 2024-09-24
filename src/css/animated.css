@@ -1,0 +1,7 @@
+.plane-animated {
+    animation-duration: 5s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+  }
+
