@@ -87,7 +87,124 @@
     });
   </script>
 
+  <script>
+    // AI/ML Project Box Interactive Functionality
+    document.addEventListener('DOMContentLoaded', function () {
+      const projectBoxes = document.querySelectorAll('.ai-project-box');
+      const modal = document.getElementById('project-modal');
+      const modalTitle = document.getElementById('modal-title');
+      const modalDescription = document.getElementById('modal-description');
+      const modalDetails = document.getElementById('modal-details');
+      const modalClose = document.getElementById('modal-close');
 
+      // Project data
+      const projectData = {
+        'llm-deployment': {
+          title: 'LLM Deployment & LangChain',
+          description: 'Deploying and orchestrating Large Language Models using LangChain framework for production applications.',
+          details: `
+            <h4>Key Technologies:</h4>
+            <ul>
+              <li>LangChain for LLM orchestration</li>
+              <li>OpenAI GPT models integration</li>
+              <li>Vector databases (Pinecone, Chroma)</li>
+              <li>Streamlit/FastAPI deployment</li>
+              <li>Prompt engineering and optimization</li>
+            </ul>
+            <h4>Projects:</h4>
+            <ul>
+              <li>Chatbot with document Q&A system</li>
+              <li>Automated content generation pipeline</li>
+              <li>Multi-agent AI workflow system</li>
+            </ul>
+            <h4>Experience:</h4>
+            <p>Built production-ready LLM applications with RAG (Retrieval-Augmented Generation) capabilities, implementing efficient prompt chaining and memory management for conversational AI systems.</p>
+          `
+        },
+        'fine-tuning': {
+          title: 'Model Fine-tuning',
+          description: 'Fine-tuning pre-trained models for specific domains and tasks using transfer learning techniques.',
+          details: `
+            <h4>Key Technologies:</h4>
+            <ul>
+              <li>Hugging Face Transformers</li>
+              <li>PyTorch Lightning</li>
+              <li>LoRA (Low-Rank Adaptation)</li>
+              <li>Parameter-efficient fine-tuning</li>
+              <li>Model evaluation and validation</li>
+            </ul>
+            <h4>Projects:</h4>
+            <ul>
+              <li>Domain-specific BERT fine-tuning</li>
+              <li>Custom sentiment analysis models</li>
+              <li>Specialized text classification</li>
+            </ul>
+            <h4>Experience:</h4>
+            <p>Successfully fine-tuned transformer models for domain-specific tasks, achieving significant performance improvements over base models while maintaining computational efficiency.</p>
+          `
+        },
+        'pytorch-training': {
+          title: 'PyTorch Training from Scratch',
+          description: 'Building and training neural networks from scratch using PyTorch for custom AI applications.',
+          details: `
+            <h4>Key Technologies:</h4>
+            <ul>
+              <li>PyTorch deep learning framework</li>
+              <li>Custom loss functions and optimizers</li>
+              <li>Data preprocessing and augmentation</li>
+              <li>Model architecture design</li>
+              <li>Training pipeline optimization</li>
+            </ul>
+            <h4>Projects:</h4>
+            <ul>
+              <li>Graph Neural Networks for anomaly detection</li>
+              <li>Computer vision models for medical imaging</li>
+              <li>Time series forecasting models</li>
+            </ul>
+            <h4>Experience:</h4>
+            <p>Developed custom neural network architectures from scratch, including Graph Neural Networks for blockchain anomaly detection and computer vision models for medical image analysis.</p>
+          `
+        }
+      };
+
+      // Add click event listeners to project boxes
+      projectBoxes.forEach(box => {
+        box.addEventListener('click', function () {
+          const projectId = this.getAttribute('data-project');
+          const project = projectData[projectId];
+
+          if (project) {
+            modalTitle.textContent = project.title;
+            modalDescription.textContent = project.description;
+            modalDetails.innerHTML = project.details;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+          }
+        });
+      });
+
+      // Close modal functionality
+      function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto'; // Restore scrolling
+      }
+
+      modalClose.addEventListener('click', closeModal);
+
+      modal.addEventListener('click', function (e) {
+        if (e.target === modal) {
+          closeModal();
+        }
+      });
+
+      // Close modal with Escape key
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+          closeModal();
+        }
+      });
+    });
+  </script>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -290,6 +407,100 @@
 
 
   </div> -->
+
+  <!-- AI/ML Applications Section -->
+  <div class="wrapper" id="ai-ml-applications">
+    <div class="animate__animated animate__fadeInDown section-title">
+      <h2 class="u-text u-text-1">AI/ML Applications<br></h2>
+    </div>
+    <p class="u-text description">
+      Specialized in deploying Large Language Models (LLM) using LangChain, fine-tuning pre-trained models,
+      and building custom neural networks from scratch with PyTorch. Experienced in implementing
+      Retrieval-Augmented Generation (RAG) systems for enhanced AI applications.
+    </p>
+
+    <div class="ai-ml-projects-grid">
+      <div class="ai-project-box" data-project="llm-deployment">
+        <div class="project-header">
+          <h3 class="project-title">LLM Deployment & LangChain</h3>
+          <div class="project-icon">🤖</div>
+        </div>
+        <div class="project-preview">
+          <p>Deploying and orchestrating Large Language Models using LangChain framework for production applications.
+          </p>
+        </div>
+        <div class="project-details">
+          <h4>Key Technologies:</h4>
+          <ul>
+            <li>LangChain for LLM orchestration</li>
+            <li>OpenAI GPT models integration</li>
+            <li>Vector databases (Pinecone, Chroma)</li>
+            <li>Streamlit/FastAPI deployment</li>
+            <li>Prompt engineering and optimization</li>
+          </ul>
+          <h4>Projects:</h4>
+          <ul>
+            <li>Chatbot with document Q&A system</li>
+            <li>Automated content generation pipeline</li>
+            <li>Multi-agent AI workflow system</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="ai-project-box" data-project="fine-tuning">
+        <div class="project-header">
+          <h3 class="project-title">Model Fine-tuning</h3>
+          <div class="project-icon">⚙️</div>
+        </div>
+        <div class="project-preview">
+          <p>Fine-tuning pre-trained models for specific domains and tasks using transfer learning techniques.</p>
+        </div>
+        <div class="project-details">
+          <h4>Key Technologies:</h4>
+          <ul>
+            <li>Hugging Face Transformers</li>
+            <li>PyTorch Lightning</li>
+            <li>LoRA (Low-Rank Adaptation)</li>
+            <li>Parameter-efficient fine-tuning</li>
+            <li>Model evaluation and validation</li>
+          </ul>
+          <h4>Projects:</h4>
+          <ul>
+            <li>Domain-specific BERT fine-tuning</li>
+            <li>Custom sentiment analysis models</li>
+            <li>Specialized text classification</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="ai-project-box" data-project="pytorch-training">
+        <div class="project-header">
+          <h3 class="project-title">PyTorch Training from Scratch</h3>
+          <div class="project-icon">🧠</div>
+        </div>
+        <div class="project-preview">
+          <p>Building and training neural networks from scratch using PyTorch for custom AI applications.</p>
+        </div>
+        <div class="project-details">
+          <h4>Key Technologies:</h4>
+          <ul>
+            <li>PyTorch deep learning framework</li>
+            <li>Custom loss functions and optimizers</li>
+            <li>Data preprocessing and augmentation</li>
+            <li>Model architecture design</li>
+            <li>Training pipeline optimization</li>
+          </ul>
+          <h4>Projects:</h4>
+          <ul>
+            <li>Graph Neural Networks for anomaly detection</li>
+            <li>Computer vision models for medical imaging</li>
+            <li>Time series forecasting models</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="wrapper" id="selected-projects">
     <div class="animate__animated animate__fadeInDown section-title">
       <h2 class="u-text u-text-1">Selected Projects<br>
@@ -490,7 +701,15 @@
     </div>
   </section>
 
-
+  <!-- Modal for AI/ML Project Details -->
+  <div class="modal-overlay" id="project-modal">
+    <div class="modal-content">
+      <button class="modal-close" id="modal-close">&times;</button>
+      <h2 class="modal-title" id="modal-title"></h2>
+      <p class="modal-description" id="modal-description"></p>
+      <div id="modal-details"></div>
+    </div>
+  </div>
 
 </body>
 
