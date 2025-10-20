@@ -5,13 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
   <title>Home</title>
-  <link rel="stylesheet" href="src/css/style.css" media="screen">
+  <link rel="stylesheet" href="src/css/style_clean.css" media="screen">
   <link rel="stylesheet" href="src/css/Home.css" media="screen">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" media="screen"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"
+    media="screen" />
   <link id="u-theme-google-font" rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i" media="screen"/>
+    href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i"
+    media="screen" />
   <link id="u-page-google-font" rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"/>
+    href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" />
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -37,6 +39,52 @@
     function type() {
       document.getElementById("language_one").innerText = word.substring(0, index++);
     }
+  </script>
+
+  <script>
+    // Contact form handling
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.querySelector('form[action*="formspree"]');
+      const messagesDiv = document.getElementById('form-messages');
+
+      if (form) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          const formData = new FormData(form);
+          const submitBtn = form.querySelector('button[type="submit"]');
+          const originalText = submitBtn.textContent;
+
+          // Show loading state
+          submitBtn.textContent = 'Sending...';
+          submitBtn.disabled = true;
+          messagesDiv.innerHTML = '';
+
+          fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+              'Accept': 'application/json'
+            }
+          })
+            .then(response => {
+              if (response.ok) {
+                messagesDiv.innerHTML = '<div class="u-form-send-message u-form-send-success">Thank you! Your message has been sent successfully.</div>';
+                form.reset();
+              } else {
+                throw new Error('Network response was not ok');
+              }
+            })
+            .catch(error => {
+              messagesDiv.innerHTML = '<div class="u-form-send-error u-form-send-message">Sorry, there was an error sending your message. Please try again later.</div>';
+            })
+            .finally(() => {
+              submitBtn.textContent = originalText;
+              submitBtn.disabled = false;
+            });
+        });
+      }
+    });
   </script>
 
 
@@ -116,7 +164,7 @@
 		padding-right: 5%;
     flex:100%; 
     max-height: 100%;">
-              <h3 class="u-text u-text-1 animate animate__animated animate__fadeInDown" >About me<br>
+              <h3 class="u-text u-text-1 animate animate__animated animate__fadeInDown">About me<br>
               </h3>
               <div class="animate__animated animate__fadeIn" style="display: flex;
                  justify-content: center; 
@@ -191,7 +239,8 @@
                   <h6 class="skill-bullet">Peking University</h6>
                   <ul>
                     <li>Major: Big Data Application</li>
-                    <li><b>Relevant Courses:</b> Data Structures and Algorithm, Statistics, Linear Algebra, Machine Learning,
+                    <li><b>Relevant Courses:</b> Data Structures and Algorithm, Statistics, Linear Algebra, Machine
+                      Learning,
                       Text Mining, Database Systems,
                       Object-oriented Programming with Java, Computer Network</li>
                   </ul>
@@ -329,7 +378,8 @@
                 <div class="u-container-style u-layout-cell u-right-cell u-size-40 u-layout-cell-3">
                   <div class="u-container-layout u-container-layout-3">
                     </span>
-                    <h3 class="u-text-6 project-title"> <a href="https://www.overleaf.com/read/kzpnpqjkrfpb#ecbcc8">Data-Driven
+                    <h3 class="u-text-6 project-title"> <a
+                        href="https://www.overleaf.com/read/kzpnpqjkrfpb#ecbcc8">Data-Driven
                         Inventory Optimization with (R,S) model in Beverage Industry: A Case Study</h3></a>
                     <p class="description ">
                       This case study focuses on establishing an efficient (R, S) inventory management model for the
@@ -368,7 +418,7 @@
                     <h3 class="u-text u-text-6 project-title"><a
                         href="https://www.kaggle.com/code/theysaynounderscore/housing-data-visualization-in-bj">Data
                         Analysis of Housing in Beijing</a></h3>
-                   
+
                     <p class=" description">Determine the home's value in the current market for a listing price.
                     </p>
                     <button class="pink-button" role="button"
@@ -398,33 +448,29 @@
             <div class="u-container-style u-layout-cell u-left-cell u-size-30 u-layout-cell-1">
               <div class="u-container-layout">
                 <div class="u-form u-form-1">
-                  <form action="https://forms.nicepagesrv.com/v2/form/process"
-                    class="u-block-0c3c-9 u-clearfix u-form-spacing-15 u-form-vertical u-inner-form" source="email">
-                    <!-- hidden inputs for siteId and pageId -->
+                  <form action="https://formspree.io/f/xpwgkqkp" method="POST"
+                    class="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form">
                     <div class="u-form-group u-form-name">
                       <label for="name-bd9d" class="u-form-control-hidden u-label">Name</label>
                       <input type="text" placeholder="Enter your Name" id="name-bd9d" name="name"
-                        class="u-input u-input-rectangle" required="">
-                    </div><!-- always visible -->
+                        class="u-input u-input-rectangle" required>
+                    </div>
                     <div class="u-form-email u-form-group">
                       <label for="email-bd9d" class="u-form-control-hidden u-label">Email</label>
                       <input type="email" placeholder="Enter a valid email address" id="email-bd9d" name="email"
-                        class="u-input u-input-rectangle" required="">
+                        class="u-input u-input-rectangle" required>
                     </div>
                     <div class="u-form-group u-form-message">
                       <label for="message-bd9d" class="u-form-control-hidden u-label">Message</label>
                       <textarea placeholder="Enter your message" rows="4" cols="50" id="message-bd9d" name="message"
-                        class="u-input u-input-rectangle" required=""></textarea>
+                        class="u-input u-input-rectangle" required></textarea>
                     </div>
                     <div class="u-form-group u-form-submit">
-                      <a href="#" class="u-btn u-btn-submit u-button-style">Submit</a>
-                      <input type="submit" value="submit" class="u-border-grey-30 u-form-control-hidden">
+                      <button type="submit" class="u-btn u-btn-submit u-button-style">Submit</button>
                     </div>
-                    <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
-                    <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors
-                      then try again. </div>
-                    <input type="hidden" value="" name="recaptchaResponse">
-                    <input type="hidden" name="formServices" value="7c6d2c46-eb76-ea5e-2359-272b339fa15a">
+                    <input type="hidden" name="_replyto" value="audrey.yh.cs@gmail.com">
+                    <input type="hidden" name="_subject" value="New Contact Form Submission">
+                    <div id="form-messages"></div>
                   </form>
                 </div>
               </div>

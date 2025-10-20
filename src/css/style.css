@@ -1,15 +1,15 @@
 /* Cleaned CSS - Only used styles */
 
 /* Media queries for responsive design */
-@media (min-width:991px) {
+@media (min-width: 991px) {
 	.display-in-mobile {
-	  display: none;
+		display: none;
 	}
 }
 
-@media (max-width:991px) {
+@media (max-width: 991px) {
 	.display-in-desktop {
-	  display: none;
+		display: none;
 	}
 }
 
@@ -121,7 +121,7 @@ a.menu-btn {
 }
 
 .timeline-list li:before {
-	content: '';
+	content: "";
 	position: absolute;
 	left: 0;
 	top: 5px;
@@ -227,6 +227,34 @@ a.menu-btn {
 	gap: 20px;
 }
 
+/* Contact section layout */
+.u-layout-row {
+	display: flex;
+	width: 100%;
+	gap: 40px;
+}
+
+.u-layout-cell {
+	flex: 1;
+	min-width: 0;
+}
+
+.u-size-30 {
+	flex: 0 0 50%;
+	max-width: 50%;
+}
+
+.u-align-right {
+	text-align: right;
+}
+
+.u-valign-middle {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+}
+
 /* Basic HTML element styling */
 html {
 	font-family: sans-serif;
@@ -288,24 +316,40 @@ section {
 
 .u-input {
 	width: 100%;
-	padding: 10px;
+	padding: 12px 15px;
 	margin-bottom: 15px;
 	border: 1px solid #ccc;
-	border-radius: 5px;
+	border-radius: 8px;
 	background-color: rgba(255, 255, 255, 0.9);
+	font-size: 14px;
+	box-sizing: border-box;
+}
+
+.u-input:focus {
+	outline: none;
+	border-color: #ff2e63;
+	box-shadow: 0 0 5px rgba(255, 46, 99, 0.3);
 }
 
 .u-btn {
 	background-color: #ff2e63;
 	color: white;
-	padding: 10px 20px;
+	padding: 12px 30px;
 	border: none;
-	border-radius: 5px;
+	border-radius: 25px;
 	cursor: pointer;
+	font-size: 16px;
+	font-weight: 600;
+	text-decoration: none;
+	display: inline-block;
+	transition: all 0.3s ease;
+	box-shadow: 0 4px 15px rgba(255, 46, 99, 0.3);
 }
 
 .u-btn:hover {
 	background-color: #e0254f;
+	transform: translateY(-2px);
+	box-shadow: 0 6px 20px rgba(255, 46, 99, 0.4);
 }
 
 /* Utility classes */
@@ -417,18 +461,49 @@ section {
 
 .u-form-send-message {
 	margin-top: 15px;
-	padding: 10px;
-	border-radius: 5px;
+	padding: 12px 15px;
+	border-radius: 8px;
+	font-size: 14px;
+	text-align: center;
 }
 
 .u-form-send-success {
 	background-color: #d4edda;
 	color: #155724;
+	border: 1px solid #c3e6cb;
 }
 
 .u-form-send-error {
 	background-color: #f8d7da;
 	color: #721c24;
+	border: 1px solid #f5c6cb;
+}
+
+/* Contact section specific styling */
+.u-section-8 {
+	padding: 80px 0;
+}
+
+.u-section-8 .u-layout-row {
+	align-items: stretch;
+	min-height: 400px;
+}
+
+.u-section-8 .u-container-layout {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.u-section-8 .u-text-1 {
+	font-size: 2.5rem;
+	margin-bottom: 20px;
+	color: #ff2e63;
+}
+
+.u-section-8 .u-text-3 {
+	font-size: 1.2rem;
+	color: #c0c0c0;
 }
 
 /* Footer */
@@ -464,21 +539,40 @@ section {
 	.social-media-links {
 		width: 100%;
 	}
-	
+
 	.social-item {
 		margin-left: 5%;
 	}
-	
+
 	.u-text-1 {
 		font-size: 2rem;
 	}
-	
+
 	nav ul {
 		flex-direction: column;
 		align-items: center;
 	}
-	
+
 	nav li {
 		margin: 5px 0;
+	}
+
+	/* Contact section responsive */
+	.u-layout-row {
+		flex-direction: column;
+		gap: 30px;
+	}
+
+	.u-size-30 {
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+
+	.u-align-right {
+		text-align: center;
+	}
+
+	.u-section-8 .u-text-1 {
+		font-size: 2rem;
 	}
 }
