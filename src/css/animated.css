@@ -4,4 +4,6 @@
     animation-iteration-count: infinite;
     animation-play-state: paused;
   }
-
+  @media (prefers-reduced-motion:no-preference) {
+    /* styles to apply if a user's device settings are set to reduced motion */
+  }

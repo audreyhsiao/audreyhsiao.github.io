@@ -1,15 +1,15 @@
 /* Cleaned CSS - Only used styles */
 
 /* Media queries for responsive design */
-@media (min-width:991px) {
+@media (min-width: 991px) {
 	.display-in-mobile {
-	  display: none;
+		display: none;
 	}
 }
 
-@media (max-width:991px) {
+@media (max-width: 991px) {
 	.display-in-desktop {
-	  display: none;
+		display: none;
 	}
 }
 
@@ -121,7 +121,7 @@ a.menu-btn {
 }
 
 .timeline-list li:before {
-	content: '';
+	content: "";
 	position: absolute;
 	left: 0;
 	top: 5px;
@@ -464,20 +464,20 @@ section {
 	.social-media-links {
 		width: 100%;
 	}
-	
+
 	.social-item {
 		margin-left: 5%;
 	}
-	
+
 	.u-text-1 {
 		font-size: 2rem;
 	}
-	
+
 	nav ul {
 		flex-direction: column;
 		align-items: center;
 	}
-	
+
 	nav li {
 		margin: 5px 0;
 	}
