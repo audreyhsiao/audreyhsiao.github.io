@@ -367,6 +367,18 @@ header {
 	z-index: 100;
 }
 
+/* Header logo container */
+.u-image.u-logo {
+	position: relative;
+	z-index: 1;
+	display: inline-block;
+}
+
+.u-image.u-logo a {
+	display: inline-block;
+	text-decoration: none;
+}
+
 /* Header content container */
 .u-sheet-1 {
 	display: flex;
@@ -380,15 +392,23 @@ header {
 	position: relative;
 	z-index: 1;
 	flex-shrink: 0;
+	display: inline-block;
 }
 
-/* Override any conflicting styles from Home.css */
+.u-image-1 img {
+	max-width: 60px;
+	height: auto;
+	width: auto;
+	display: block;
+}
+
 img.logo-image {
 	position: relative !important;
 	z-index: 1 !important;
 	display: block !important;
-	max-width: 100% !important;
+	max-width: 60px !important;
 	height: auto !important;
+	width: auto !important;
 	object-fit: contain !important;
 }
 
