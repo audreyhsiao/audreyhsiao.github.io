@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Photography - Audrey Hsiao</title>
+    <link rel="stylesheet" href="src/css/style_clean.css" media="screen">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"
+        media="screen" />
+
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js" defer=""></script>
+    <script>
+        $(function () {
+            var typed = new Typed('#hello', {
+                strings: ['Hello, this is Audrey.\n^1000 Welcome to my website'],
+                typeSpeed: 50,
+                loop: true,
+                showCursor: false,
+            });
+        });
+    </script>
+
+    <script>
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const navContainer = document.querySelector('.u-nav-container');
+
+            if (mobileMenuToggle && navContainer) {
+                mobileMenuToggle.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    mobileMenuToggle.classList.toggle('active');
+                    navContainer.classList.toggle('active');
+                });
+
+                // Close menu when clicking on a link
+                const navLinks = document.querySelectorAll('.u-nav-item a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function () {
+                        mobileMenuToggle.classList.remove('active');
+                        navContainer.classList.remove('active');
+                    });
+                });
+
+                // Close menu when clicking outside
+                document.addEventListener('click', function (e) {
+                    if (!mobileMenuToggle.contains(e.target) && !navContainer.contains(e.target)) {
+                        mobileMenuToggle.classList.remove('active');
+                        navContainer.classList.remove('active');
+                    }
+                });
+            }
+        });
+    </script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Person",
+		"name": "Audrey Hsiao",
+		"url": "https://audreyhsiao.github.io",
+		"sameAs": [
+			"https://github.com/audreyhsiao",
+			"https://linkedin.com/in/audrey-hsiao"
+		]
+	}</script>
+</head>
+
+<body class="u-body u-xl-mode" data-lang="en">
+    <header class="u-clearfix u-header u-header" id="sec-43be">
+        <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+            <a href="https://audreyhsiao.github.io" class="u-image u-image-1">
+                <img src="./src/images/logo.jpg" class=" logo-image">
+            </a>
+            <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
+                <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
+                    <a class="u-button-style u-custom-left-right-menu-spacing 
+            u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link
+             u-text-active-palette-1-base u-text-hover-palette-2-base mobile-menu-toggle" href="#">
+                        <span class="hamburger"></span>
+                        <span class="hamburger"></span>
+                        <span class="hamburger"></span>
+                    </a>
+                </div>
+                <div class="u-custom-menu u-nav-container" id="navi">
+                    <ul class="u-nav u-unstyled u-nav-1">
+                        <li class="u-nav-item"><a class="u-button-style u-nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="u-nav-item"><a class="u-button-style u-nav-link" href="index.html#aboutMe">About</a>
+                        </li>
+                        <li class="u-nav-item"><a class="u-button-style u-nav-link"
+                                href="index.html#selected-projects">Projects</a>
+                        </li>
+                        <li class="u-nav-item"><a class="u-button-style u-nav-link"
+                                href="photography.html">Photography</a>
+                        </li>
+                        <li class="u-nav-item"><a class="u-button-style u-nav-link"
+                                href="index.html#carousel_fa10">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Photography Hero Section -->
+    <section class="u-clearfix u-section-1" id="sec-1234">
+        <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+            <div class="u-clearfix u-expanded-width u-group u-group-1">
+                <div
+                    class="u-container-layout u-valign-bottom-md u-valign-bottom-sm u-valign-bottom-xs u-container-layout-1">
+                    <h1 class="u-custom-font u-font-playfair-display u-text u-title u-text-2 " id="hello"></h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photography Gallery Section -->
+    <div class="wrapper" id="photography-gallery">
+        <div class="animate__animated animate__fadeInDown section-title">
+            <h3 class="u-text u-text-1">Photography Portfolio<br></h3>
+        </div>
+        <p class="u-text description">
+            Capturing moments through the lens, exploring the beauty in everyday life and extraordinary places.
+        </p>
+
+        <!-- Photography Grid -->
+        <div class="photography-grid">
+            <div class="photo-item">
+                <div class="photo-container">
+                    <img src="./src/images/photo1.jpg" alt="Photography 1" class="photo-image">
+                    <div class="photo-overlay">
+                        <h4 class="photo-title">Urban Landscapes</h4>
+                        <p class="photo-description">City architecture and street photography</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="photo-item">
+                <div class="photo-container">
+                    <img src="./src/images/photo2.jpg" alt="Photography 2" class="photo-image">
+                    <div class="photo-overlay">
+                        <h4 class="photo-title">Nature & Wildlife</h4>
+                        <p class="photo-description">Natural landscapes and wildlife photography</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="photo-item">
+                <div class="photo-container">
+                    <img src="./src/images/photo3.jpg" alt="Photography 3" class="photo-image">
+                    <div class="photo-overlay">
+                        <h4 class="photo-title">Portrait Photography</h4>
+                        <p class="photo-description">Human portraits and candid moments</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="photo-item">
+                <div class="photo-container">
+                    <img src="./src/images/photo4.jpg" alt="Photography 4" class="photo-image">
+                    <div class="photo-overlay">
+                        <h4 class="photo-title">Travel Photography</h4>
+                        <p class="photo-description">Exploring cultures and destinations</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="photo-item">
+                <div class="photo-container">
+                    <img src="./src/images/photo5.jpg" alt="Photography 5" class="photo-image">
+                    <div class="photo-overlay">
+                        <h4 class="photo-title">Abstract Art</h4>
+                        <p class="photo-description">Creative and experimental photography</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="photo-item">
+                <div class="photo-container">
+                    <img src="./src/images/photo6.jpg" alt="Photography 6" class="photo-image">
+                    <div class="photo-overlay">
+                        <h4 class="photo-title">Event Photography</h4>
+                        <p class="photo-description">Weddings, celebrations, and special moments</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="u-black u-clearfix u-section-8" id="carousel_fa10">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <div class="data-layout-selected u-clearfix u-expanded-width u-gutter-20 u-layout-wrap u-layout-wrap-1">
+                <div class="u-layout">
+                    <div class="u-layout-row">
+                        <div class="u-container-style u-layout-cell u-left-cell u-size-30 u-layout-cell-1">
+                            <div class="u-container-layout">
+                                <h3 class="u-text u-text-1">happy to see you</h3>
+
+                                <p class="u-text u-text-grey-30 u-text-3">Connect with me!
+                                </p>
+
+                                <div class="u-social-icons u-spacing-10 u-social-icons-1">
+                                    <a class="u-social-url" title="facebook" target="_blank" href="#">
+                                        <span class="u-icon u-social-facebook u-social-icon u-icon-1">
+                                            <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice"
+                                                viewBox="0 0 112 112" style="">
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-12fb">
+                                                </use>
+                                            </svg>
+                                        </span>
+                                    </a>
+                                    <a class="u-social-url" title="twitter" target="_blank" href="#">
+                                        <span class="u-icon u-social-icon u-social-twitter u-icon-2">
+                                            <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice"
+                                                viewBox="0 0 112 112" style="">
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-1c4a">
+                                                </use>
+                                            </svg>
+                                        </span>
+                                    </a>
+                                    <a class="u-social-url" title="instagram" target="_blank" href="#">
+                                        <span class="u-icon u-social-icon u-social-instagram u-icon-3">
+                                            <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice"
+                                                viewBox="0 0 112 112" style="">
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-7849">
+                                                </use>
+                                            </svg>
+                                        </span>
+                                    </a>
+                                    <a class="u-social-url" title="linkedin" target="_blank" href="#">
+                                        <span class="u-icon u-social-icon u-social-linkedin u-icon-4">
+                                            <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice"
+                                                viewBox="0 0 112 112" style="">
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-82bd">
+                                                </use>
+                                            </svg>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="u-container-style u-layout-cell u-right-cell u-size-30 u-layout-cell-2">
+                            <div class="u-container-layout u-container-layout-2">
+                                <div class="u-form u-form-1">
+                                    <form action="https://formspree.io/f/xpwgkqkp" method="POST"
+                                        class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form"
+                                        style="padding: 0px;" source="custom" name="form">
+                                        <div class="u-form-email u-form-group">
+                                            <label for="name-bd9d" class="u-form-control-hidden u-label">Name</label>
+                                            <input type="text" placeholder="Enter your Name" id="name-bd9d" name="name"
+                                                class="u-input u-input-rectangle" required>
+                                        </div>
+                                        <div class="u-form-email u-form-group">
+                                            <label for="email-bd9d" class="u-form-control-hidden u-label">Email</label>
+                                            <input type="email" placeholder="Enter a valid email address"
+                                                id="email-bd9d" name="email" class="u-input u-input-rectangle" required>
+                                        </div>
+                                        <div class="u-form-group u-form-message">
+                                            <label for="message-bd9d"
+                                                class="u-form-control-hidden u-label">Message</label>
+                                            <textarea placeholder="Enter your message" rows="4" cols="50"
+                                                id="message-bd9d" name="message" class="u-input u-input-rectangle"
+                                                required></textarea>
+                                        </div>
+                                        <div class="u-form-group u-form-submit">
+                                            <button type="submit"
+                                                class="u-btn u-btn-submit u-button-style">Submit</button>
+                                        </div>
+                                        <input type="hidden" name="_replyto" value="audrey.yh.cs@gmail.com">
+                                        <input type="hidden" name="_subject" value="New Contact Form Submission">
+                                        <div id="form-messages"></div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

@@ -202,7 +202,7 @@ a.menu-btn {
 }
 
 .skill-title h6 {
-	color: #fff;
+	color: #ff2e63;
 	font-weight: bold;
 	margin-bottom: 15px;
 	opacity: 0.8;
@@ -260,14 +260,21 @@ a.menu-btn {
 	transform: scale(1.05);
 }
 
-.box h2 {
+.box h2,
+.box h3 {
 	color: #f5f5f5;
 	padding: 5%;
 	font-size: 18px !important;
+	font-family: "Fira Code", monospace;
 	font-size: 2rem;
 	text-align: center;
 	text-transform: uppercase;
 	margin-bottom: 15px;
+	min-height: 3rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	line-height: 1.2;
 }
 
 .box p {
@@ -283,6 +290,7 @@ a.menu-btn {
 	width: 100%;
 	height: 100%;
 	min-height: 100vh;
+	background-color: #000;
 	position: relative;
 	display: flex;
 	justify-content: center;
@@ -293,6 +301,159 @@ a.menu-btn {
 	background-position: center;
 	background-size: cover;
 	padding: 20px;
+}
+
+/* Section backgrounds */
+#aboutMe,
+#ai-ml-applications {
+	background-color: #000;
+	width: 100%;
+}
+
+/* Video container */
+.video-container {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 aspect ratio */
+	height: 0;
+	overflow: hidden;
+	max-width: 900px;
+	margin: 40px auto;
+	border-radius: 15px;
+}
+
+.video-container iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 15px;
+}
+
+/* AI/ML Projects Grid */
+.ai-ml-projects-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 30px;
+	margin: 40px 0;
+}
+
+/* AI Project Box - Matching Selected Projects Style */
+.ai-project-box {
+	position: relative;
+	width: 100%;
+	height: 400px;
+	box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+	border-radius: 15px;
+	margin: 30px 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	border-top: 1px solid rgba(255, 255, 255, 0.5);
+	border-left: 1px solid rgba(255, 255, 255, 0.5);
+	backdrop-filter: blur(5px);
+	background-color: rgba(255, 255, 255, 0.1);
+	padding: 30px;
+	transition: transform 0.3s ease;
+}
+
+.ai-project-box:hover {
+	transform: translateY(-5px);
+}
+
+.ai-project-box .project-title {
+	color: #f5f5f5;
+	font-size: 1.3rem;
+	font-weight: 600;
+	margin-bottom: 15px;
+	text-transform: uppercase;
+}
+
+.ai-project-box p {
+	color: #ccc;
+	font-family: "Fira Code", monospace;
+	font-size: 14px;
+	line-height: 1.6;
+}
+
+.ai-project-box .project-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.ai-project-box .project-icon {
+	font-size: 2rem;
+}
+
+/* Photography Page Styles */
+.photography-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 30px;
+	margin: 40px 0;
+}
+
+.photo-item {
+	position: relative;
+	overflow: hidden;
+	border-radius: 15px;
+	box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+	transition: transform 0.3s ease;
+}
+
+.photo-item:hover {
+	transform: translateY(-5px);
+}
+
+.photo-container {
+	position: relative;
+	width: 100%;
+	height: 300px;
+	overflow: hidden;
+}
+
+.photo-image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.3s ease;
+}
+
+.photo-item:hover .photo-image {
+	transform: scale(1.05);
+}
+
+.photo-overlay {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+	padding: 20px;
+	color: white;
+	transform: translateY(100%);
+	transition: transform 0.3s ease;
+}
+
+.photo-item:hover .photo-overlay {
+	transform: translateY(0);
+}
+
+.photo-title {
+	font-size: 1.2rem;
+	font-weight: 600;
+	margin-bottom: 5px;
+	color: #fff;
+}
+
+.photo-description {
+	font-size: 0.9rem;
+	color: #ccc;
+	margin: 0;
 }
 
 /* Introduction section */
@@ -359,7 +520,7 @@ body {
 
 /* Header styling */
 header {
-	background-color: rgba(0, 0, 0, 0.9);
+	background-color: #ffffff;
 	padding: 10px 0;
 	position: fixed;
 	top: 0;
@@ -443,7 +604,7 @@ nav {
 .hamburger {
 	width: 25px;
 	height: 3px;
-	background-color: #fff;
+	background-color: #333;
 	transition: all 0.3s ease;
 	display: block;
 }
@@ -491,6 +652,7 @@ nav {
 		display: block;
 		padding: 15px 20px;
 		font-size: 16px;
+		color: #333;
 	}
 }
 
@@ -513,7 +675,7 @@ nav ul {
 	margin: 0;
 	padding: 0;
 	display: flex;
-	justify-content: center;
+	justify-content: flex-end;
 }
 
 nav li {
@@ -521,7 +683,7 @@ nav li {
 }
 
 nav a {
-	color: #fff;
+	color: #333;
 	text-decoration: none;
 	padding: 10px 20px;
 	transition: color 0.3s;
@@ -649,6 +811,13 @@ section {
 	margin-bottom: 15px;
 }
 
+/* Hero text styling */
+#hello {
+	font-family: "Times New Roman", Times, serif !important;
+	font-size: 7rem !important;
+	text-align: left !important;
+}
+
 .u-text-3 {
 	font-size: 1rem;
 	line-height: 1.6;
@@ -771,6 +940,10 @@ section {
 		font-size: 1.2rem;
 	}
 
+	#hello {
+		font-size: 3rem !important;
+	}
+
 	.u-text-3 {
 		font-size: 0.9rem;
 	}
@@ -784,6 +957,20 @@ section {
 	.wrapper {
 		padding: 15px;
 		min-height: auto;
+	}
+
+	.video-container {
+		margin: 20px auto;
+		max-width: 100%;
+	}
+
+	.photography-grid {
+		grid-template-columns: 1fr;
+		gap: 20px;
+	}
+
+	.photo-container {
+		height: 250px;
 	}
 
 	/* About section mobile */
@@ -923,12 +1110,20 @@ section {
 	nav li {
 		margin: 0 15px;
 	}
+
+	#hello {
+		font-size: 8rem !important;
+	}
 }
 
 /* Desktop and large tablets (992px - 1199px) */
 @media (min-width: 992px) and (max-width: 1199px) {
 	.u-text-1 {
 		font-size: 3rem;
+	}
+
+	#hello {
+		font-size: 10rem !important;
 	}
 
 	.ai-ml-projects-grid {
