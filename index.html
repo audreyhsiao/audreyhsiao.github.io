@@ -118,6 +118,70 @@
         });
       }
     });
+
+    // Project modal functionality
+    document.addEventListener('DOMContentLoaded', function () {
+      const modal = document.getElementById('project-modal');
+      const modalClose = document.querySelector('.modal-close');
+      const projectCards = document.querySelectorAll('.project-card');
+
+      // Project data
+      const projectData = {
+        database: {
+          title: 'Database System Implementation',
+          subtitle: 'C++ Database System',
+          completionDate: 'Completed: December 2023',
+          description: 'Design and implement a database system from scratch in a team of 2 using C++, including the development of a LRU (Least Recently Used) buffer manager, implementing record management, and managing file I/O on tables. Build and optimize the system to operate on Linux, focusing on efficient data storage and retrieval mechanisms. This project involved creating a complete database engine with custom buffer management, record storage, and query processing capabilities.'
+        },
+        sentiment: {
+          title: 'Sentimental Analysis on reviews of the TV series "Empresses in the Palace"',
+          subtitle: 'Data Visualization & NLP',
+          completionDate: 'Completed: June 2022',
+          description: 'The team used OpenAlex API to get data about language models and present visualization with d3.js. I am responsible for the data collecting and the visualization of three graphs (the 4th, 5th, and the 6th presented on the website). This project involved sentiment analysis of Chinese TV series reviews using natural language processing techniques and creating interactive data visualizations to understand viewer sentiment patterns.'
+        },
+        blockchain: {
+          title: 'Abnormal Detection Method on Blockchain with Graph Neural Networks (GNNs)',
+          subtitle: 'Graph Neural Networks & Blockchain',
+          completionDate: 'Completed: May 2023',
+          description: 'Proposed and experimented a new method integrating Random Forest and Graph Attention Network with PyTorch on bitcoin datasets to detect abnormal transactions flows and illicit wallet address inside the network. Increased 40% of Recall Rate and 15% Precision on detecting illicit wallet nodes. This research project involved developing novel graph neural network architectures for blockchain anomaly detection and achieving significant improvements in fraud detection accuracy.'
+        }
+      };
+
+      // Open modal when clicking on project cards
+      projectCards.forEach(card => {
+        card.addEventListener('click', function () {
+          const projectId = card.getAttribute('data-project');
+          const data = projectData[projectId];
+
+          if (data) {
+            document.querySelector('.modal-title').textContent = data.title;
+            document.querySelector('.modal-subtitle').textContent = data.subtitle;
+            document.querySelector('.modal-completion-date').textContent = data.completionDate;
+            document.querySelector('.modal-description').textContent = data.description;
+            modal.style.display = 'block';
+          }
+        });
+      });
+
+      // Close modal when clicking close button
+      modalClose.addEventListener('click', function () {
+        modal.style.display = 'none';
+      });
+
+      // Close modal when clicking outside of it
+      window.addEventListener('click', function (e) {
+        if (e.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
+
+      // Close modal with Escape key
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && modal.style.display === 'block') {
+          modal.style.display = 'none';
+        }
+      });
+    });
   </script>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -285,7 +349,7 @@
 
               </div>
 
-              <div class="info-board" >
+              <div class="info-board">
                 <div class="skill-title">
                   <h6>Skills</h6>
                 </div>
@@ -440,39 +504,49 @@
 
 
     </p>
-    <div class="box">
-      <div class="description">
-        <h3>Database System Implementation</h2>
-          <p>
-            Design and implement a database system from scratch in a team of 2 using C++, including the development of a
-            LRU (Least Recently
-            Used) buffer manager, implementing record management, and managing file I/O on tables. Build and optimize
-            the
-            system to operate on Linux, focusing on efficient data storage and retrieval mechanisms
-          </p>
+    <div class="projects-grid">
+      <div class="project-card" data-project="database">
+        <div class="project-title-wrapper">
+          <h3 class="project-title">Database System Implementation</h3>
+        </div>
+        <div class="project-meta">
+          <span class="project-subtitle">C++ Database System</span>
+        </div>
+        <div class="project-description">
+          <p>Design and implement a database system from scratch in a team of 2 using C++, including the development of
+            a LRU (Least Recently Used) buffer manager, implementing record management, and managing file I/O on tables.
+            Build and optimize the system to operate on Linux, focusing on efficient data storage and retrieval
+            mechanisms.</p>
+        </div>
       </div>
 
-    </div>
-    <div class="box">
-      <div class="description">
-        <h2>Sentimental Analysis on reviews of the TV series "Empresses in the Palace"</h2>
-        <p>The team used OpenAlex API to get data about language models and present visualization with d3.js I am
-          responsible for the data collecting and the visualization of three graphs (the 4th, 5th, and the 6th presented
-          on the website)</p>
+      <div class="project-card" data-project="sentiment">
+        <div class="project-title-wrapper">
+          <h3 class="project-title">Sentimental Analysis on reviews of the TV series "Empresses in the Palace"</h3>
+        </div>
+        <div class="project-meta">
+          <span class="project-subtitle">Data Visualization & NLP</span>
+        </div>
+        <div class="project-description">
+          <p>The team used OpenAlex API to get data about language models and present visualization with d3.js. I am
+            responsible for the data collecting and the visualization of three graphs (the 4th, 5th, and the 6th
+            presented on the website).</p>
+        </div>
       </div>
 
-    </div>
-    <div class="box">
-      <div class="description">
-        <h2>Abnormal Detection Method on Blockchain with Graph Neural Networks (GNNs) </h2>
-        <p> Proposed and experimented a new method integrating Random Forest and Graph Attention Network with Pytorch on
-          bitcoin datasets
-          to detect abnormal transactions flows and illicit wallet address inside the network. Increased 40% of Recall
-          Rate and 15% Precision on
-          detecting illicit wallet nodes</li>
-        </p>
+      <div class="project-card" data-project="blockchain">
+        <div class="project-title-wrapper">
+          <h3 class="project-title">Abnormal Detection Method on Blockchain with Graph Neural Networks (GNNs)</h3>
+        </div>
+        <div class="project-meta">
+          <span class="project-subtitle">Graph Neural Networks & Blockchain</span>
+        </div>
+        <div class="project-description">
+          <p>Proposed and experimented a new method integrating Random Forest and Graph Attention Network with PyTorch
+            on bitcoin datasets to detect abnormal transactions flows and illicit wallet address inside the network.
+            Increased 40% of Recall Rate and 15% Precision on detecting illicit wallet nodes.</p>
+        </div>
       </div>
-
     </div>
 
   </div>
@@ -637,6 +711,28 @@
     </div>
   </section>
 
+  <!-- Project Modal -->
+  <div id="project-modal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <div class="modal-header">
+        <h2 class="modal-title"></h2>
+        <h3 class="modal-subtitle"></h3>
+        <div class="modal-completion-date"></div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-description"></div>
+        <div class="modal-images">
+          <div class="image-placeholder">
+            <span>Result Image 1</span>
+          </div>
+          <div class="image-placeholder">
+            <span>Result Image 2</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </body>
 
