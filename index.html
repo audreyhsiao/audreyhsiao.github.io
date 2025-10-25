@@ -130,20 +130,38 @@
         database: {
           title: 'Database System Implementation',
           subtitle: 'C++ Database System',
-      
+          completionDate: 'Completed: December 2023',
           description: 'Design and implement a database system from scratch in a team of 2 using C++, including the development of a LRU (Least Recently Used) buffer manager, implementing record management, and managing file I/O on tables. Build and optimize the system to operate on Linux, focusing on efficient data storage and retrieval mechanisms. This project involved creating a complete database engine with custom buffer management, record storage, and query processing capabilities.'
         },
         sentiment: {
           title: 'Sentimental Analysis on reviews of the TV series "Empresses in the Palace"',
           subtitle: 'Data Visualization & NLP',
-      
+          completionDate: 'Completed: June 2022',
           description: 'The team used OpenAlex API to get data about language models and present visualization with d3.js. I am responsible for the data collecting and the visualization of three graphs (the 4th, 5th, and the 6th presented on the website). This project involved sentiment analysis of Chinese TV series reviews using natural language processing techniques and creating interactive data visualizations to understand viewer sentiment patterns.'
         },
         blockchain: {
           title: 'Abnormal Detection Method on Blockchain with Graph Neural Networks (GNNs)',
           subtitle: 'Graph Neural Networks & Blockchain',
-        
+          completionDate: 'Completed: May 2023',
           description: 'Proposed and experimented a new method integrating Random Forest and Graph Attention Network with PyTorch on bitcoin datasets to detect abnormal transactions flows and illicit wallet address inside the network. Increased 40% of Recall Rate and 15% Precision on detecting illicit wallet nodes. This research project involved developing novel graph neural network architectures for blockchain anomaly detection and achieving significant improvements in fraud detection accuracy.'
+        },
+        'llm-deployment': {
+          title: 'LLM Deployment & LangChain',
+          subtitle: 'Large Language Models & Orchestration',
+          completionDate: 'Completed: Ongoing',
+          description: 'Deploying and orchestrating Large Language Models using LangChain framework for production applications. Building scalable AI systems with advanced prompt engineering and multi-agent workflows. Key technologies include LangChain for LLM orchestration, OpenAI GPT models integration, vector databases (Pinecone, Chroma), Streamlit/FastAPI deployment, and prompt engineering optimization. Projects include chatbot with document Q&A system, automated content generation pipeline, and multi-agent AI workflow system.'
+        },
+        'model-finetuning': {
+          title: 'Model Fine-tuning',
+          subtitle: 'Transfer Learning & Model Adaptation',
+          completionDate: 'Completed: Ongoing',
+          description: 'Fine-tuning pre-trained models for specific domains and tasks using transfer learning techniques. Implementing parameter-efficient methods like LoRA for domain-specific applications. Key technologies include Hugging Face Transformers, PyTorch Lightning, LoRA (Low-Rank Adaptation), parameter-efficient fine-tuning, and model evaluation and validation. Projects include domain-specific BERT fine-tuning, custom sentiment analysis models, and specialized text classification.'
+        },
+        'pytorch-training': {
+          title: 'PyTorch Training from Scratch',
+          subtitle: 'Custom Neural Networks & Deep Learning',
+          completionDate: 'Completed: Ongoing',
+          description: 'Building and training neural networks from scratch using PyTorch for custom AI applications. Developing specialized architectures for graph neural networks, computer vision, and time series forecasting. Key technologies include PyTorch deep learning framework, custom loss functions and optimizers, data preprocessing and augmentation, model architecture design, and training pipeline optimization. Projects include Graph Neural Networks for anomaly detection, computer vision models for medical imaging, and time series forecasting models.'
         }
       };
 
@@ -156,7 +174,7 @@
           if (data) {
             document.querySelector('.modal-title').textContent = data.title;
             document.querySelector('.modal-subtitle').textContent = data.subtitle;
-           
+
             document.querySelector('.modal-description').textContent = data.description;
             modal.style.display = 'block';
           }
@@ -402,83 +420,43 @@
       Retrieval-Augmented Generation (RAG) systems for enhanced AI applications.
     </p>
 
-    <div class="ai-ml-projects-grid">
-      <div class="ai-project-box">
-        <div class="project-header">
+    <div class="projects-grid">
+      <div class="project-card" data-project="llm-deployment">
+        <div class="project-title-wrapper">
           <h3 class="project-title">LLM Deployment & LangChain</h3>
-          <div class="project-icon">🤖</div>
         </div>
-        <div class="project-preview">
+        <div class="project-meta">
+          <span class="project-subtitle">Large Language Models & Orchestration</span>
+        </div>
+        <div class="project-description">
           <p>Deploying and orchestrating Large Language Models using LangChain framework for production applications.
-          </p>
-        </div>
-        <div class="project-details">
-          <h4>Key Technologies:</h4>
-          <ul>
-            <li>LangChain for LLM orchestration</li>
-            <li>OpenAI GPT models integration</li>
-            <li>Vector databases (Pinecone, Chroma)</li>
-            <li>Streamlit/FastAPI deployment</li>
-            <li>Prompt engineering and optimization</li>
-          </ul>
-          <h4>Projects:</h4>
-          <ul>
-            <li>Chatbot with document Q&A system</li>
-            <li>Automated content generation pipeline</li>
-            <li>Multi-agent AI workflow system</li>
-          </ul>
+            Building scalable AI systems with advanced prompt engineering and multi-agent workflows.</p>
         </div>
       </div>
 
-      <div class="ai-project-box">
-        <div class="project-header">
+      <div class="project-card" data-project="model-finetuning">
+        <div class="project-title-wrapper">
           <h3 class="project-title">Model Fine-tuning</h3>
-          <div class="project-icon">⚙️</div>
         </div>
-        <div class="project-preview">
-          <p>Fine-tuning pre-trained models for specific domains and tasks using transfer learning techniques.</p>
+        <div class="project-meta">
+          <span class="project-subtitle">Transfer Learning & Model Adaptation</span>
         </div>
-        <div class="project-previewgit">
-          <h4>Key Technologies:</h4>
-          <ul>
-            <li>Hugging Face Transformers</li>
-            <li>PyTorch Lightning</li>
-            <li>LoRA (Low-Rank Adaptation)</li>
-            <li>Parameter-efficient fine-tuning</li>
-            <li>Model evaluation and validation</li>
-          </ul>
-          <h4>Projects:</h4>
-          <ul>
-            <li>Domain-specific BERT fine-tuning</li>
-            <li>Custom sentiment analysis models</li>
-            <li>Specialized text classification</li>
-          </ul>
+        <div class="project-description">
+          <p>Fine-tuning pre-trained models for specific domains and tasks using transfer learning techniques.
+            Implementing parameter-efficient methods like LoRA for domain-specific applications.</p>
         </div>
       </div>
 
-      <div class="ai-project-box">
-        <div class="project-header">
+      <div class="project-card" data-project="pytorch-training">
+        <div class="project-title-wrapper">
           <h3 class="project-title">PyTorch Training from Scratch</h3>
-          <div class="project-icon">🧠</div>
         </div>
-        <div class="project-preview">
-          <p>Building and training neural networks from scratch using PyTorch for custom AI applications.</p>
+        <div class="project-meta">
+          <span class="project-subtitle">Custom Neural Networks & Deep Learning</span>
         </div>
-        <div class="project-details">
-          <h4>Key Technologies:</h4>
-          <ul>
-            <li>PyTorch deep learning framework</li>
-            <li>Custom loss functions and optimizers</li>
-            <li>Data preprocessing and augmentation</li>
-            <li>Model architecture design</li>
-            <li>Training pipeline optimization</li>
-          </ul>
-          <h4>Projects:</h4>
-          <ul>
-            <li>Graph Neural Networks for anomaly detection</li>
-            <li>Computer vision models for medical imaging</li>
-            <li>Time series forecasting models</li>
-          </ul>
+        <div class="project-description">
+          <p>Building and training neural networks from scratch using PyTorch for custom AI applications. Developing
+            specialized architectures for graph neural networks, computer vision, and time series forecasting.</p>
         </div>
       </div>
     </div>
