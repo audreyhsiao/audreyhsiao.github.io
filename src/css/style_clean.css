@@ -500,7 +500,7 @@ a.menu-btn {
 	grid-column: 2 !important;
 	grid-row: 1 !important;
 	text-align: left;
-	margin: 0 0 0 20px ;
+	margin: 0 0 0 20px;
 }
 
 .modal-subtitle {
@@ -549,6 +549,166 @@ a.menu-btn {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+/* Resume Download Button */
+.resume-download-section {
+	margin-top: 30px;
+	text-align: center;
+}
+
+.resume-download-btn {
+	background-color: #ff2e63;
+	color: white;
+	border: none;
+	border-radius: 25px;
+	padding: 12px 24px;
+	font-size: 16px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	box-shadow: 0 4px 15px rgba(255, 46, 99, 0.3);
+}
+
+.resume-download-btn:hover {
+	background-color: #e0254f;
+	transform: translateY(-2px);
+	box-shadow: 0 6px 20px rgba(255, 46, 99, 0.4);
+}
+
+.resume-download-btn:active {
+	transform: translateY(0);
+}
+
+/* Resume Modal Styles */
+.resume-modal-content {
+	max-width: 500px;
+	width: 90%;
+}
+
+.resume-form {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.form-group {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.form-label {
+	color: var(--modal-fg);
+	font-weight: 600;
+	font-size: 14px;
+	margin-bottom: 5px;
+}
+
+.password-input-wrapper {
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+.form-input {
+	width: 100%;
+	padding: 12px 45px 12px 15px;
+	border: 2px solid rgba(0, 0, 0, 0.1);
+	border-radius: 8px;
+	font-size: 16px;
+	background-color: rgba(255, 255, 255, 0.9);
+	color: var(--modal-fg);
+	transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+	outline: none;
+	border-color: var(--accent-pink);
+	box-shadow: 0 0 0 3px rgba(255, 46, 99, 0.1);
+}
+
+.password-toggle {
+	position: absolute;
+	right: 12px;
+	background: none;
+	border: none;
+	color: #666;
+	cursor: pointer;
+	padding: 4px;
+	border-radius: 4px;
+	transition: color 0.3s ease;
+}
+
+.password-toggle:hover {
+	color: var(--accent-pink);
+}
+
+.error-message {
+	background-color: #f8d7da;
+	color: #721c24;
+	padding: 12px;
+	border-radius: 8px;
+	font-size: 14px;
+	border: 1px solid #f5c6cb;
+}
+
+.form-actions {
+	display: flex;
+	gap: 12px;
+	justify-content: flex-end;
+}
+
+.btn {
+	padding: 12px 24px;
+	border: none;
+	border-radius: 8px;
+	font-size: 14px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.btn-primary {
+	background-color: var(--accent-pink);
+	color: white;
+}
+
+.btn-primary:hover {
+	background-color: #e0254f;
+}
+
+.btn-primary:disabled {
+	background-color: #ccc;
+	cursor: not-allowed;
+}
+
+.btn-secondary {
+	background-color: transparent;
+	color: var(--modal-fg);
+	border: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary:hover {
+	background-color: rgba(0, 0, 0, 0.05);
+}
+
+.btn-loading {
+	display: none;
+}
+
+.btn:disabled .btn-text {
+	display: none;
+}
+
+.btn:disabled .btn-loading {
+	display: inline-flex;
 }
 
 /* Legacy box styling for backward compatibility */
@@ -1407,6 +1567,27 @@ section {
 
 	.modal-images {
 		grid-template-columns: 1fr;
+	}
+
+	/* Resume modal mobile styles */
+	.resume-modal-content {
+		width: 95%;
+		max-width: 400px;
+		margin: 10px;
+	}
+
+	.resume-form {
+		gap: 15px;
+	}
+
+	.form-actions {
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	.btn {
+		width: 100%;
+		justify-content: center;
 	}
 
 	/* Contact form mobile */
