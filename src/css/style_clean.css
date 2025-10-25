@@ -56,9 +56,9 @@ main {
 
 /* Content container stays centered but does not control page background */
 .container {
-	max-width: 1100px;
+	max-width: 1200px;
 	margin: 0 auto;
-	padding-inline: 16px;
+	padding-inline: 20px;
 }
 
 /* Full-bleed pattern for sections that need full-width backgrounds */
@@ -774,7 +774,7 @@ a.menu-btn {
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
-	padding: 20px;
+	padding: 10px;
 }
 
 /* Section backgrounds */
@@ -1180,7 +1180,7 @@ nav a:hover {
 
 /* Section styling */
 section {
-	padding: 60px 0;
+	padding: 40px 0;
 }
 
 /* Form styling */
@@ -1254,7 +1254,7 @@ section {
 .u-sheet {
 	max-width: 1200px;
 	margin: 0 auto;
-	padding: 0 20px;
+	padding: 0 40px;
 }
 
 .u-expanded-width {
@@ -1440,7 +1440,7 @@ section {
 
 	/* Wrapper adjustments */
 	.wrapper {
-		padding: 15px;
+		padding: 5px;
 		min-height: auto;
 	}
 
@@ -1624,7 +1624,7 @@ section {
 	}
 
 	.wrapper {
-		padding: 20px;
+		padding: 10px;
 	}
 
 	.box {
@@ -1649,7 +1649,7 @@ section {
 	}
 
 	.wrapper {
-		padding: 25px;
+		padding: 15px;
 	}
 
 	.box {
@@ -1707,8 +1707,14 @@ section {
 	}
 
 	.wrapper {
-		max-width: 1200px;
+		max-width: 1400px;
 		margin: 0 auto;
+		padding: 20px;
+	}
+
+	.u-sheet {
+		max-width: 1400px;
+		padding: 0 60px;
 	}
 
 	.ai-ml-projects-grid {
