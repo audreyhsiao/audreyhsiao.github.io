@@ -130,19 +130,19 @@
         database: {
           title: 'Database System Implementation',
           subtitle: 'C++ Database System',
-          completionDate: 'Completed: December 2023',
+      
           description: 'Design and implement a database system from scratch in a team of 2 using C++, including the development of a LRU (Least Recently Used) buffer manager, implementing record management, and managing file I/O on tables. Build and optimize the system to operate on Linux, focusing on efficient data storage and retrieval mechanisms. This project involved creating a complete database engine with custom buffer management, record storage, and query processing capabilities.'
         },
         sentiment: {
           title: 'Sentimental Analysis on reviews of the TV series "Empresses in the Palace"',
           subtitle: 'Data Visualization & NLP',
-          completionDate: 'Completed: June 2022',
+      
           description: 'The team used OpenAlex API to get data about language models and present visualization with d3.js. I am responsible for the data collecting and the visualization of three graphs (the 4th, 5th, and the 6th presented on the website). This project involved sentiment analysis of Chinese TV series reviews using natural language processing techniques and creating interactive data visualizations to understand viewer sentiment patterns.'
         },
         blockchain: {
           title: 'Abnormal Detection Method on Blockchain with Graph Neural Networks (GNNs)',
           subtitle: 'Graph Neural Networks & Blockchain',
-          completionDate: 'Completed: May 2023',
+        
           description: 'Proposed and experimented a new method integrating Random Forest and Graph Attention Network with PyTorch on bitcoin datasets to detect abnormal transactions flows and illicit wallet address inside the network. Increased 40% of Recall Rate and 15% Precision on detecting illicit wallet nodes. This research project involved developing novel graph neural network architectures for blockchain anomaly detection and achieving significant improvements in fraud detection accuracy.'
         }
       };
@@ -156,7 +156,7 @@
           if (data) {
             document.querySelector('.modal-title').textContent = data.title;
             document.querySelector('.modal-subtitle').textContent = data.subtitle;
-            document.querySelector('.modal-completion-date').textContent = data.completionDate;
+           
             document.querySelector('.modal-description').textContent = data.description;
             modal.style.display = 'block';
           }
@@ -716,9 +716,9 @@
     <div class="modal-content">
       <span class="modal-close">&times;</span>
       <div class="modal-header">
-        <h2 class="modal-title"></h2>
-        <h3 class="modal-subtitle"></h3>
-        <div class="modal-completion-date"></div>
+        <div class="modal-title"></div>
+        <!-- <div class="modal-completion-date"></div> -->
+        <div class="modal-subtitle"></div>
       </div>
       <div class="modal-body">
         <div class="modal-description"></div>
