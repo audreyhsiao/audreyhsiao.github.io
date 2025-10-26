@@ -183,6 +183,16 @@ main {
 	opacity: 80%;
 }
 
+.description p {
+	margin-bottom: 15px;
+	line-height: 1.6;
+}
+
+.description p strong {
+	color: #ff2e63;
+	font-weight: 600;
+}
+
 /* Menu button */
 a.menu-btn {
 	text-decoration: none;

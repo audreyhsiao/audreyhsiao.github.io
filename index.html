@@ -312,7 +312,7 @@
           if (data) {
             document.querySelector('.modal-title').textContent = data.title;
             document.querySelector('.modal-subtitle').textContent = data.subtitle;
-            
+
             // Populate each section
             document.querySelector('.modal-meta').innerHTML = data.meta ? `<p class="meta-text">${data.meta}</p>` : '';
             document.querySelector('.modal-tldr').innerHTML = data.tldr ? `<p><strong>TL;DR:</strong> ${data.tldr}</p>` : '';
@@ -320,35 +320,35 @@
             document.querySelector('.modal-built').innerHTML = data.built ? `<h4>What I Built</h4><p>${data.built}</p>` : '';
             document.querySelector('.modal-role').innerHTML = data.role ? `<h4>My Role</h4><p>${data.role}</p>` : '';
             document.querySelector('.modal-impact').innerHTML = data.impact ? `<h4>Impact</h4><p>${data.impact}</p>` : '';
-            
+
             // Highlights as bulleted list
             if (data.highlights && data.highlights.length > 0) {
-              const highlightsHtml = '<h4>Highlights</h4><ul>' + 
+              const highlightsHtml = '<h4>Highlights</h4><ul>' +
                 data.highlights.map(h => `<li>${h}</li>`).join('') + '</ul>';
               document.querySelector('.modal-highlights').innerHTML = highlightsHtml;
             } else {
               document.querySelector('.modal-highlights').innerHTML = '';
             }
-            
+
             // Tech as comma-separated list
             if (data.tech && data.tech.length > 0) {
-              document.querySelector('.modal-tech').innerHTML = 
+              document.querySelector('.modal-tech').innerHTML =
                 `<h4>Tech</h4><p class="tech-list">${data.tech.join(', ')}</p>`;
             } else {
               document.querySelector('.modal-tech').innerHTML = '';
             }
-            
+
             // Links as buttons (disabled for placeholders)
             if (data.links && data.links.length > 0) {
               const linksHtml = '<h4>Links</h4><div class="modal-links-buttons">' +
-                data.links.map(link => 
+                data.links.map(link =>
                   `<a href="${link.href}" class="link-button ${link.href.startsWith('#') ? 'disabled' : ''}">${link.text}</a>`
                 ).join('') + '</div>';
               document.querySelector('.modal-links').innerHTML = linksHtml;
             } else {
               document.querySelector('.modal-links').innerHTML = '';
             }
-            
+
             modal.style.display = 'flex';
           }
         });
@@ -757,11 +757,13 @@
     <div class="animate__animated animate__fadeInDown section-title">
       <h3 class="u-text u-text-1">AI/ML Applications<br></h3>
     </div>
-    <p class="u-text description">
-      Specialized in deploying Large Language Models (LLM) using LangChain, fine-tuning pre-trained models,
-      and building custom neural networks from scratch with PyTorch. Experienced in implementing
-      Retrieval-Augmented Generation (RAG) systems for enhanced AI applications.
-    </p>
+    <div class="u-text description">
+      <p><strong>What I do:</strong></p>
+      <p><strong>LLM orchestration & RAG:</strong> LangChain pipelines, retrieval with vector DBs (Pinecone/Chroma), prompt engineering/evaluation, tool/function calling, routing, observability, and production deployment.</p>
+      <p><strong>Model fine-tuning:</strong> Transfer learning with LoRA/PEFT, dataset curation/cleaning, validation and ablation, metrics-driven evaluation, and safety/quality checks.</p>
+      <p><strong>Training from scratch (PyTorch):</strong> Custom architectures, losses and optimizers, data preprocessing/augmentation, experiment tracking, and performance tuning.</p>
+      <p><strong>Where I've applied it:</strong> Vision-language assistants, static code analysis/fixing, and anomaly detection with GNNs; plus time-series forecasting.</p>
+    </div>
 
     <div class="projects-grid">
       <div class="project-card" data-project="artchat">
@@ -773,7 +775,8 @@
         </div>
         <div class="project-description">
           <p>Mar–May 2025 · Team project (lead on data/model) · Houston, TX</p>
-          <p>Built an image-aware Q&A assistant for artworks: crawler → metadata → auto Q&A → adapter-tuned VLM → evaluation → demo.</p>
+          <p>Built an image-aware Q&A assistant for artworks: crawler → metadata → auto Q&A → adapter-tuned VLM →
+            evaluation → demo.</p>
         </div>
       </div>
 
@@ -800,45 +803,6 @@
         <div class="project-description">
           <p>Jan–May 2024 · Undergrad thesis · Beijing, China</p>
           <p>Combined feature models with a GAT to flag suspicious nodes in a Bitcoin-like graph.</p>
-        </div>
-      </div>
-
-      <div class="project-card" data-project="llm-deployment">
-        <div class="project-title-wrapper">
-          <h3 class="project-title">LLM Deployment & LangChain</h3>
-        </div>
-        <div class="project-meta">
-          <span class="project-subtitle">Large Language Models & Orchestration</span>
-        </div>
-        <div class="project-description">
-          <p>Deploying and orchestrating Large Language Models using LangChain framework for production applications.
-            Building scalable AI systems with advanced prompt engineering and multi-agent workflows.</p>
-        </div>
-      </div>
-
-      <div class="project-card" data-project="model-finetuning">
-        <div class="project-title-wrapper">
-          <h3 class="project-title">Model Fine-tuning</h3>
-        </div>
-        <div class="project-meta">
-          <span class="project-subtitle">Transfer Learning & Model Adaptation</span>
-        </div>
-        <div class="project-description">
-          <p>Fine-tuning pre-trained models for specific domains and tasks using transfer learning techniques.
-            Implementing parameter-efficient methods like LoRA for domain-specific applications.</p>
-        </div>
-      </div>
-
-      <div class="project-card" data-project="pytorch-training">
-        <div class="project-title-wrapper">
-          <h3 class="project-title">PyTorch Training from Scratch</h3>
-        </div>
-        <div class="project-meta">
-          <span class="project-subtitle">Custom Neural Networks & Deep Learning</span>
-        </div>
-        <div class="project-description">
-          <p>Building and training neural networks from scratch using PyTorch for custom AI applications. Developing
-            specialized architectures for graph neural networks, computer vision, and time series forecasting.</p>
         </div>
       </div>
     </div>
