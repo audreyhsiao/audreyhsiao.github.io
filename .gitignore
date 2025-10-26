@@ -3,10 +3,10 @@
 .env.local
 .env.production
 .env.staging
-
+.DS_Store
 # Private files
 private/
-!private/README.md
+!private/*.md
 
 # Node modules
 node_modules/
