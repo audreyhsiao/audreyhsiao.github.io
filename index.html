@@ -127,41 +127,179 @@
 
       // Project data
       const projectData = {
-        database: {
-          title: 'Database System Implementation',
-          subtitle: 'C++ Database System',
-          completionDate: 'Completed: December 2023',
-          description: 'Design and implement a database system from scratch in a team of 2 using C++, including the development of a LRU (Least Recently Used) buffer manager, implementing record management, and managing file I/O on tables. Build and optimize the system to operate on Linux, focusing on efficient data storage and retrieval mechanisms. This project involved creating a complete database engine with custom buffer management, record storage, and query processing capabilities.'
+        artchat: {
+          title: 'ArtChat — Vision-Language AI Guide',
+          subtitle: 'Image-aware Q&A for museum artworks',
+          meta: 'Mar–May 2025 · Team project (lead on data/model) · Houston, TX',
+          tldr: 'Built an image-aware Q&A assistant for artworks: crawler → metadata → auto Q&A → adapter-tuned VLM → evaluation → demo.',
+          problem: 'Audio guides are generic. Visitors want short, specific explanations based on the photo and the artifact\'s metadata.',
+          built: 'Collected artwork pages (Selenium/BeautifulSoup); generated 3–5 grounded Q&A per item with an LLM; trained a compact VLM (vision encoder + small LM via projection) in PyTorch with mixed precision; evaluated with ROUGE-L/BERTScore; shipped a Streamlit demo for single-turn Q&A.',
+          role: 'Wrote crawler + parser, Q&A synthesis scripts, data loaders; implemented adapter/projection training loop; added eval and built the demo.',
+          impact: 'Reduced hallucination by grounding answers in museum metadata; demo shows concise, contextful replies to visitor questions.',
+          highlights: [
+            'Adapter-based fine-tuning to keep VRAM low',
+            'Automated dataset creation per artwork with guardrails',
+            'Best-checkpoint + deterministic eval hooks',
+            'Clean demo with image upload + free-form question'
+          ],
+          tech: ['Python', 'PyTorch', 'Hugging Face', 'Selenium', 'BeautifulSoup', 'ROUGE-L', 'BERTScore', 'Streamlit'],
+          links: [
+            { text: 'Demo', href: '#demo-artchat' },
+            { text: 'Code', href: '#code-artchat' },
+            { text: 'Report', href: '#report-artchat' }
+          ]
         },
-        sentiment: {
-          title: 'Sentimental Analysis on reviews of the TV series "Empresses in the Palace"',
-          subtitle: 'Data Visualization & NLP',
-          completionDate: 'Completed: June 2022',
-          description: 'The team used OpenAlex API to get data about language models and present visualization with d3.js. I am responsible for the data collecting and the visualization of three graphs (the 4th, 5th, and the 6th presented on the website). This project involved sentiment analysis of Chinese TV series reviews using natural language processing techniques and creating interactive data visualizations to understand viewer sentiment patterns.'
+        pbif: {
+          title: 'PBIF — Power BIOS Intelligence Fixed',
+          subtitle: 'LLM-assisted static code fix pipeline',
+          meta: 'Jul–Aug 2025 · Software Engineering Intern · Taipei, Taiwan',
+          tldr: 'Automated part of static-analysis fixing: parse issues → propose patch → test → open PR.',
+          problem: 'Large C codebases receive many static-analysis findings; triage is slow.',
+          built: 'Exported Coverity issues; RAG over internal docs; prompted LLM for patch + rationale; CI ran tests/linters; opened PRs with structured risk notes.',
+          role: 'Implemented orchestrator, retrieval, templates, and PR automation.',
+          impact: 'Reduced manual review ≈25% in trial; faster engineering loop.',
+          highlights: [
+            'Guardrails and revert paths',
+            'Repo-specific style prompts',
+            'Automated PR descriptions with diffs'
+          ],
+          tech: ['Python', 'LangChain', 'Vector DB', 'Git CI/CD', 'Coverity', 'C'],
+          links: [
+            { text: 'Overview', href: '#overview-pbif' }
+          ]
         },
         blockchain: {
-          title: 'Abnormal Detection Method on Blockchain with Graph Neural Networks (GNNs)',
-          subtitle: 'Graph Neural Networks & Blockchain',
-          completionDate: 'Completed: May 2023',
-          description: 'Proposed and experimented a new method integrating Random Forest and Graph Attention Network with PyTorch on bitcoin datasets to detect abnormal transactions flows and illicit wallet address inside the network. Increased 40% of Recall Rate and 15% Precision on detecting illicit wallet nodes. This research project involved developing novel graph neural network architectures for blockchain anomaly detection and achieving significant improvements in fraud detection accuracy.'
+          title: 'Blockchain Anomaly Detection — GNN',
+          subtitle: 'Detect illicit wallets with GAT + features',
+          meta: 'Jan–May 2024 · Undergrad thesis · Beijing, China',
+          tldr: 'Combined feature models with a GAT to flag suspicious nodes in a Bitcoin-like graph.',
+          problem: 'Heuristics miss complex patterns; deep models need good features and class-imbalance care.',
+          built: 'ETL to build address graph; engineered degree/centrality/temporal features; trained Random Forest baseline, then PyTorch GAT with class weighting and sampling.',
+          role: 'Built pipelines, features, training/eval, and experiment logging.',
+          impact: '+40% recall and +15% precision vs baseline (figures OK to show).',
+          highlights: [
+            'Reproducible splits and metrics',
+            'Ablation showing classical ML + GNN gains',
+            'Threshold tuning via confusion matrix'
+          ],
+          tech: ['Python', 'PyTorch', 'GAT', 'scikit-learn', 'Pandas', 'Bash'],
+          links: [
+            { text: 'Code', href: '#code-gnn' }
+          ]
+        },
+        database: {
+          title: 'Database System Implementation — C++',
+          subtitle: 'LRU buffer manager · B+-tree · SQL syntax check',
+          meta: 'Aug–Dec 2024 · Team of two · Rice University',
+          tldr: 'Built core DBMS parts on Linux: page cache with LRU, on-disk B+-tree, and a minimal SQL front end.',
+          problem: 'Learn DBMS internals by implementing storage, indexing, and a simple parser.',
+          built: 'Page-oriented storage with fixed frames; LRU eviction with tests; B+-tree insert/search/split/merge; catalog metadata and simple DDL; heap scans.',
+          role: 'Owned buffer manager and I/O path; co-implemented B+-tree ops and tests; wired parser to execution stubs.',
+          impact: 'Practical performance insight and predictable page reuse; clearer index vs scan trade-offs.',
+          highlights: [
+            'Deterministic eviction tests',
+            'Leaf/inner invariants and latch protocol (single-threaded)',
+            'Catalog and CREATE TABLE support'
+          ],
+          tech: ['C++17', 'Linux', 'CMake', 'B+-tree', 'LRU'],
+          links: [
+            { text: 'Code', href: '#code-dbms' }
+          ]
+        },
+        movie: {
+          title: 'Movie Review App — Full-stack',
+          subtitle: 'React/React Native + Django REST',
+          meta: 'Jan 2025 – present · Solo project · Houston, TX',
+          tldr: 'Web + mobile app for reviews, search, and watchlist. Secure auth, paginated APIs, and clean UI.',
+          problem: 'A simple place to log films and share reviews across devices.',
+          built: 'Django REST API with JWT auth and pagination; React web and React Native clients with protected routes and validation; search, filters, infinite scroll, and watchlist.',
+          role: 'Designed schema, built APIs and UIs, set up basic CI (lint/test).',
+          impact: 'Smooth sign-up → review → share flow; modular API ready for tags or social login.',
+          highlights: [
+            'Auth flows with server-side validation',
+            'Review editor with drafts/autosave',
+            'Search + filters + infinite scroll',
+            'Personal stats (streaks, top genres)'
+          ],
+          tech: ['React', 'React Native', 'Django REST', 'PostgreSQL', 'JWT', 'Postman'],
+          links: [
+            { text: 'Web', href: '#web-movie' },
+            { text: 'Mobile', href: '#mobile-movie' },
+            { text: 'API Code', href: '#code-movie' }
+          ]
+        },
+        inventory: {
+          title: 'Inventory Optimization — (R, S)',
+          subtitle: 'Datathon case (Third Prize)',
+          meta: 'Mar–Sep 2023 · Team (first author) · Beijing, China',
+          tldr: 'Estimated demand and optimized (R,S) to hit ~80% service level at lower cost.',
+          problem: 'Stable inventory without overstock under uncertain demand/lead time.',
+          built: 'Demand features; XGBoost/Random Forest forecasts; LP for (R,S) under service-level constraints; backtests and stress tests.',
+          role: 'Led modeling/validation, cleaning, baselines, LP, and charts.',
+          impact: 'Stockouts down vs heuristics; prize-winning robustness in tests.',
+          highlights: [
+            'Seasonality and promo features',
+            'Sensitivity on lead time/variance',
+            'Business-readable visuals'
+          ],
+          tech: ['Python', 'Pandas', 'XGBoost', 'Random Forest', 'Linear Programming'],
+          links: [
+            { text: 'Report', href: '#report-inventory' }
+          ]
         },
         'llm-deployment': {
           title: 'LLM Deployment & LangChain',
           subtitle: 'Large Language Models & Orchestration',
-          completionDate: 'Completed: Ongoing',
-          description: 'Deploying and orchestrating Large Language Models using LangChain framework for production applications. Building scalable AI systems with advanced prompt engineering and multi-agent workflows. Key technologies include LangChain for LLM orchestration, OpenAI GPT models integration, vector databases (Pinecone, Chroma), Streamlit/FastAPI deployment, and prompt engineering optimization. Projects include chatbot with document Q&A system, automated content generation pipeline, and multi-agent AI workflow system.'
+          meta: 'Completed: Ongoing',
+          tldr: 'Deploying and orchestrating Large Language Models using LangChain framework for production applications.',
+          problem: 'Building scalable AI systems with advanced prompt engineering and multi-agent workflows.',
+          built: 'LangChain for LLM orchestration, OpenAI GPT models integration, vector databases (Pinecone, Chroma), Streamlit/FastAPI deployment, and prompt engineering optimization.',
+          role: 'Full-stack development of AI applications including chatbot with document Q&A system, automated content generation pipeline, and multi-agent AI workflow system.',
+          impact: 'Production-ready AI systems with scalable architecture and optimized performance.',
+          highlights: [
+            'Multi-agent workflow orchestration',
+            'Document Q&A with RAG implementation',
+            'Automated content generation pipeline',
+            'Vector database integration'
+          ],
+          tech: ['LangChain', 'OpenAI GPT', 'Pinecone', 'Chroma', 'Streamlit', 'FastAPI', 'Python'],
+          links: []
         },
         'model-finetuning': {
           title: 'Model Fine-tuning',
           subtitle: 'Transfer Learning & Model Adaptation',
-          completionDate: 'Completed: Ongoing',
-          description: 'Fine-tuning pre-trained models for specific domains and tasks using transfer learning techniques. Implementing parameter-efficient methods like LoRA for domain-specific applications. Key technologies include Hugging Face Transformers, PyTorch Lightning, LoRA (Low-Rank Adaptation), parameter-efficient fine-tuning, and model evaluation and validation. Projects include domain-specific BERT fine-tuning, custom sentiment analysis models, and specialized text classification.'
+          meta: 'Completed: Ongoing',
+          tldr: 'Fine-tuning pre-trained models for specific domains and tasks using transfer learning techniques.',
+          problem: 'Implementing parameter-efficient methods like LoRA for domain-specific applications.',
+          built: 'Hugging Face Transformers, PyTorch Lightning, LoRA (Low-Rank Adaptation), parameter-efficient fine-tuning, and model evaluation and validation.',
+          role: 'Domain-specific BERT fine-tuning, custom sentiment analysis models, and specialized text classification.',
+          impact: 'Efficient model adaptation with minimal computational resources.',
+          highlights: [
+            'LoRA implementation for parameter efficiency',
+            'Domain-specific BERT fine-tuning',
+            'Custom sentiment analysis models',
+            'Specialized text classification'
+          ],
+          tech: ['Hugging Face Transformers', 'PyTorch Lightning', 'LoRA', 'BERT', 'Python'],
+          links: []
         },
         'pytorch-training': {
           title: 'PyTorch Training from Scratch',
           subtitle: 'Custom Neural Networks & Deep Learning',
-          completionDate: 'Completed: Ongoing',
-          description: 'Building and training neural networks from scratch using PyTorch for custom AI applications. Developing specialized architectures for graph neural networks, computer vision, and time series forecasting. Key technologies include PyTorch deep learning framework, custom loss functions and optimizers, data preprocessing and augmentation, model architecture design, and training pipeline optimization. Projects include Graph Neural Networks for anomaly detection, computer vision models for medical imaging, and time series forecasting models.'
+          meta: 'Completed: Ongoing',
+          tldr: 'Building and training neural networks from scratch using PyTorch for custom AI applications.',
+          problem: 'Developing specialized architectures for graph neural networks, computer vision, and time series forecasting.',
+          built: 'PyTorch deep learning framework, custom loss functions and optimizers, data preprocessing and augmentation, model architecture design, and training pipeline optimization.',
+          role: 'Graph Neural Networks for anomaly detection, computer vision models for medical imaging, and time series forecasting models.',
+          impact: 'Custom neural network architectures optimized for specific use cases.',
+          highlights: [
+            'Graph Neural Networks for anomaly detection',
+            'Computer vision models for medical imaging',
+            'Time series forecasting models',
+            'Custom loss functions and optimizers'
+          ],
+          tech: ['PyTorch', 'Deep Learning', 'GNN', 'Computer Vision', 'Time Series', 'Python'],
+          links: []
         }
       };
 
@@ -174,9 +312,44 @@
           if (data) {
             document.querySelector('.modal-title').textContent = data.title;
             document.querySelector('.modal-subtitle').textContent = data.subtitle;
-
-            document.querySelector('.modal-description').textContent = data.description;
-            modal.style.display = 'block';
+            
+            // Populate each section
+            document.querySelector('.modal-meta').innerHTML = data.meta ? `<p class="meta-text">${data.meta}</p>` : '';
+            document.querySelector('.modal-tldr').innerHTML = data.tldr ? `<p><strong>TL;DR:</strong> ${data.tldr}</p>` : '';
+            document.querySelector('.modal-problem').innerHTML = data.problem ? `<h4>Problem</h4><p>${data.problem}</p>` : '';
+            document.querySelector('.modal-built').innerHTML = data.built ? `<h4>What I Built</h4><p>${data.built}</p>` : '';
+            document.querySelector('.modal-role').innerHTML = data.role ? `<h4>My Role</h4><p>${data.role}</p>` : '';
+            document.querySelector('.modal-impact').innerHTML = data.impact ? `<h4>Impact</h4><p>${data.impact}</p>` : '';
+            
+            // Highlights as bulleted list
+            if (data.highlights && data.highlights.length > 0) {
+              const highlightsHtml = '<h4>Highlights</h4><ul>' + 
+                data.highlights.map(h => `<li>${h}</li>`).join('') + '</ul>';
+              document.querySelector('.modal-highlights').innerHTML = highlightsHtml;
+            } else {
+              document.querySelector('.modal-highlights').innerHTML = '';
+            }
+            
+            // Tech as comma-separated list
+            if (data.tech && data.tech.length > 0) {
+              document.querySelector('.modal-tech').innerHTML = 
+                `<h4>Tech</h4><p class="tech-list">${data.tech.join(', ')}</p>`;
+            } else {
+              document.querySelector('.modal-tech').innerHTML = '';
+            }
+            
+            // Links as buttons (disabled for placeholders)
+            if (data.links && data.links.length > 0) {
+              const linksHtml = '<h4>Links</h4><div class="modal-links-buttons">' +
+                data.links.map(link => 
+                  `<a href="${link.href}" class="link-button ${link.href.startsWith('#') ? 'disabled' : ''}">${link.text}</a>`
+                ).join('') + '</div>';
+              document.querySelector('.modal-links').innerHTML = linksHtml;
+            } else {
+              document.querySelector('.modal-links').innerHTML = '';
+            }
+            
+            modal.style.display = 'flex';
           }
         });
       });
@@ -591,6 +764,45 @@
     </p>
 
     <div class="projects-grid">
+      <div class="project-card" data-project="artchat">
+        <div class="project-title-wrapper">
+          <h3 class="project-title">ArtChat — Vision-Language AI Guide</h3>
+        </div>
+        <div class="project-meta">
+          <span class="project-subtitle">Image-aware Q&A for museum artworks</span>
+        </div>
+        <div class="project-description">
+          <p>Mar–May 2025 · Team project (lead on data/model) · Houston, TX</p>
+          <p>Built an image-aware Q&A assistant for artworks: crawler → metadata → auto Q&A → adapter-tuned VLM → evaluation → demo.</p>
+        </div>
+      </div>
+
+      <div class="project-card" data-project="pbif">
+        <div class="project-title-wrapper">
+          <h3 class="project-title">PBIF — Power BIOS Intelligence Fixed</h3>
+        </div>
+        <div class="project-meta">
+          <span class="project-subtitle">LLM-assisted static code fix pipeline</span>
+        </div>
+        <div class="project-description">
+          <p>Jul–Aug 2025 · Software Engineering Intern · Taipei, Taiwan</p>
+          <p>Automated part of static-analysis fixing: parse issues → propose patch → test → open PR.</p>
+        </div>
+      </div>
+
+      <div class="project-card" data-project="blockchain">
+        <div class="project-title-wrapper">
+          <h3 class="project-title">Blockchain Anomaly Detection — GNN</h3>
+        </div>
+        <div class="project-meta">
+          <span class="project-subtitle">Detect illicit wallets with GAT + features</span>
+        </div>
+        <div class="project-description">
+          <p>Jan–May 2024 · Undergrad thesis · Beijing, China</p>
+          <p>Combined feature models with a GAT to flag suspicious nodes in a Bitcoin-like graph.</p>
+        </div>
+      </div>
+
       <div class="project-card" data-project="llm-deployment">
         <div class="project-title-wrapper">
           <h3 class="project-title">LLM Deployment & LangChain</h3>
@@ -655,44 +867,40 @@
     <div class="projects-grid">
       <div class="project-card" data-project="database">
         <div class="project-title-wrapper">
-          <h3 class="project-title">Database System Implementation</h3>
+          <h3 class="project-title">Database System Implementation — C++</h3>
         </div>
         <div class="project-meta">
-          <span class="project-subtitle">C++ Database System</span>
+          <span class="project-subtitle">LRU buffer manager · B+-tree · SQL syntax check</span>
         </div>
         <div class="project-description">
-          <p>Design and implement a database system from scratch in a team of 2 using C++, including the development of
-            a LRU (Least Recently Used) buffer manager, implementing record management, and managing file I/O on tables.
-            Build and optimize the system to operate on Linux, focusing on efficient data storage and retrieval
-            mechanisms.</p>
+          <p>Aug–Dec 2024 · Team of two · Rice University</p>
+          <p>Built core DBMS parts on Linux: page cache with LRU, on-disk B+-tree, and a minimal SQL front end.</p>
         </div>
       </div>
 
-      <div class="project-card" data-project="sentiment">
+      <div class="project-card" data-project="movie">
         <div class="project-title-wrapper">
-          <h3 class="project-title">Sentimental Analysis on reviews of the TV series "Empresses in the Palace"</h3>
+          <h3 class="project-title">Movie Review App — Full-stack</h3>
         </div>
         <div class="project-meta">
-          <span class="project-subtitle">Data Visualization & NLP</span>
+          <span class="project-subtitle">React/React Native + Django REST</span>
         </div>
         <div class="project-description">
-          <p>The team used OpenAlex API to get data about language models and present visualization with d3.js. I am
-            responsible for the data collecting and the visualization of three graphs (the 4th, 5th, and the 6th
-            presented on the website).</p>
+          <p>Jan 2025 – present · Solo project · Houston, TX</p>
+          <p>Web + mobile app for reviews, search, and watchlist. Secure auth, paginated APIs, and clean UI.</p>
         </div>
       </div>
 
-      <div class="project-card" data-project="blockchain">
+      <div class="project-card" data-project="inventory">
         <div class="project-title-wrapper">
-          <h3 class="project-title">Abnormal Detection Method on Blockchain with Graph Neural Networks (GNNs)</h3>
+          <h3 class="project-title">Inventory Optimization — (R, S)</h3>
         </div>
         <div class="project-meta">
-          <span class="project-subtitle">Graph Neural Networks & Blockchain</span>
+          <span class="project-subtitle">Datathon case (Third Prize)</span>
         </div>
         <div class="project-description">
-          <p>Proposed and experimented a new method integrating Random Forest and Graph Attention Network with PyTorch
-            on bitcoin datasets to detect abnormal transactions flows and illicit wallet address inside the network.
-            Increased 40% of Recall Rate and 15% Precision on detecting illicit wallet nodes.</p>
+          <p>Mar–Sep 2023 · Team (first author) · Beijing, China</p>
+          <p>Estimated demand and optimized (R,S) to hit ~80% service level at lower cost.</p>
         </div>
       </div>
     </div>
@@ -869,15 +1077,15 @@
         <div class="modal-subtitle"></div>
       </div>
       <div class="modal-body">
-        <div class="modal-description"></div>
-        <div class="modal-images">
-          <div class="image-placeholder">
-            <span>Result Image 1</span>
-          </div>
-          <div class="image-placeholder">
-            <span>Result Image 2</span>
-          </div>
-        </div>
+        <div class="modal-section modal-meta"></div>
+        <div class="modal-section modal-tldr"></div>
+        <div class="modal-section modal-problem"></div>
+        <div class="modal-section modal-built"></div>
+        <div class="modal-section modal-role"></div>
+        <div class="modal-section modal-impact"></div>
+        <div class="modal-section modal-highlights"></div>
+        <div class="modal-section modal-tech"></div>
+        <div class="modal-section modal-links"></div>
       </div>
     </div>
   </div>
