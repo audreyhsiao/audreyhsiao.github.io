@@ -199,6 +199,9 @@ a.menu-btn {
 	color: #252a34;
 }
 
+a.menu-btn:hover {
+	color: #ff2e63;
+}
 /* Project styling */
 .project {
 	display: inline-block;
@@ -1084,7 +1087,8 @@ a.menu-btn {
 
 /* Logo image */
 .logo-image {
-	max-width: 100% !important;
+	max-width: 30px !important;
+	max-height: 40px !important;
 	height: auto !important;
 	position: relative !important;
 	z-index: 1 !important;
@@ -1334,6 +1338,9 @@ nav {
 		padding: 15px 20px;
 		font-size: 16px;
 		color: #333;
+	}
+	.u-nav-item :hover {
+		color: #ff2e63;
 	}
 }
 
