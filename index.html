@@ -342,16 +342,8 @@
               document.querySelector('.modal-tech').innerHTML = '';
             }
 
-            // Links as buttons (disabled for placeholders)
-            if (data.links && data.links.length > 0) {
-              const linksHtml = '<h4>Links</h4><div class="modal-links-buttons">' +
-                data.links.map(link =>
-                  `<a href="${link.href}" class="link-button ${link.href.startsWith('#') ? 'disabled' : ''}">${link.text}</a>`
-                ).join('') + '</div>';
-              document.querySelector('.modal-links').innerHTML = linksHtml;
-            } else {
-              document.querySelector('.modal-links').innerHTML = '';
-            }
+            // Hide links section - only showing images
+            document.querySelector('.modal-links').innerHTML = '';
 
             modal.style.display = 'flex';
           }
@@ -986,13 +978,15 @@
       </div>
       <div class="video-demo-right">
         <div class="video-container">
-          <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/9aVkAC7eE-U" title="YouTube video player"
-            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/9aVkAC7eE-U"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen>
           </iframe>
         </div>
         <p class="video-caption description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
         </p>
       </div>
     </div>
