@@ -1096,8 +1096,8 @@ a.menu-btn {
 .avatar-container {
 	position: relative;
 	display: inline-block;
-	width: 200px;
-	height: 200px;
+	width: 300px;
+	height: 300px;
 	max-width: 100%;
 }
 
@@ -1105,8 +1105,8 @@ a.menu-btn {
 #avatar,
 .avatar-video {
 	border-radius: 50%;
-	width: 200px;
-	height: 200px;
+	width: 300px;
+	height: 300px;
 	max-width: 100%;
 	object-fit: cover;
 	display: block;
@@ -1126,38 +1126,9 @@ a.menu-btn {
 	display: block;
 }
 
-/* Avatar Toggle Button */
+/* Avatar Toggle Button - Hidden */
 .avatar-toggle {
-	position: absolute;
-	bottom: 5px;
-	right: 5px;
-	width: 36px;
-	height: 36px;
-	border-radius: 50%;
-	background: rgba(255, 46, 99, 0.9);
-	border: 2px solid rgba(255, 255, 255, 0.3);
-	color: white;
-	cursor: pointer;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	transition: all 0.3s ease;
-	z-index: 2;
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-.avatar-toggle:hover {
-	background: rgba(255, 46, 99, 1);
-	transform: scale(1.1);
-}
-
-.avatar-toggle:focus {
-	outline: 2px solid var(--accent-pink);
-	outline-offset: 2px;
-}
-
-.avatar-toggle i {
-	font-size: 14px;
+	display: none !important;
 }
 
 /* Visually hidden but accessible to screen readers */
@@ -1178,11 +1149,11 @@ a.menu-btn {
 	.avatar-video {
 		display: none;
 	}
-	
+
 	.avatar-fallback {
 		display: block;
 	}
-	
+
 	.avatar-toggle {
 		display: none !important;
 	}
@@ -1693,25 +1664,14 @@ section {
 
 	/* Avatar mobile */
 	.avatar-container {
-		width: 180px;
-		height: 180px;
+		width: 250px;
+		height: 250px;
 	}
 
 	#avatar,
 	.avatar-video {
-		width: 180px;
-		height: 180px;
-	}
-
-	.avatar-toggle {
-		width: 32px;
-		height: 32px;
-		bottom: 3px;
-		right: 3px;
-	}
-
-	.avatar-toggle i {
-		font-size: 12px;
+		width: 250px;
+		height: 250px;
 	}
 
 	/* Social media links mobile */

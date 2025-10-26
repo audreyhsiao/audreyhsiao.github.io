@@ -17,8 +17,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <!-- Favicon -->
-  <link rel="icon" href="src/images/logo.png" sizes="32x32" type="image/png">
-  <link rel="apple-touch-icon" href="src/images/logo.png">
+  <link rel="icon" href="logo.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="logo.png">
 
   <script class="u-script" type="text/javascript" src="src/js/jquery.js"></script>
   <script class=" u-script" type="text/javascript" src="src/js/nicepage.js"></script>
@@ -370,74 +370,17 @@
       });
     });
 
-    // Avatar animation with accessibility and reduced motion support
+    // Avatar animation - autoplay on load
     document.addEventListener('DOMContentLoaded', function () {
       const avatar = document.getElementById('avatar');
-      const toggleBtn = document.getElementById('avatar-toggle');
-      const toggleIcon = toggleBtn.querySelector('i');
       
-      // Check for reduced motion preference
-      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      
-      if (prefersReducedMotion && avatar) {
-        // If user prefers reduced motion, pause the video and show static image
-        avatar.pause();
-        toggleBtn.style.display = 'none'; // Hide toggle button
-      }
-      
-      // Intersection Observer for lazy loading
-      if ('IntersectionObserver' in window && avatar) {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              avatar.play().catch(err => {
-                console.log('Video autoplay failed:', err);
-                // Fallback is already handled by the <img> tag inside <video>
-              });
-              observer.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.5 });
-        
-        observer.observe(avatar);
-      }
-      
-      // Toggle play/pause functionality
-      if (toggleBtn && avatar) {
-        toggleBtn.addEventListener('click', function() {
-          if (avatar.paused) {
-            avatar.play();
-            toggleIcon.classList.remove('fa-play');
-            toggleIcon.classList.add('fa-pause');
-            toggleBtn.setAttribute('aria-label', 'Pause animation');
-          } else {
-            avatar.pause();
-            toggleIcon.classList.remove('fa-pause');
-            toggleIcon.classList.add('fa-play');
-            toggleBtn.setAttribute('aria-label', 'Play animation');
-          }
-        });
-        
-        // Keyboard support (Space and Enter keys)
-        toggleBtn.addEventListener('keydown', function(e) {
-          if (e.key === ' ' || e.key === 'Enter') {
-            e.preventDefault();
-            toggleBtn.click();
-          }
+      if (avatar) {
+        // Ensure video plays automatically
+        avatar.play().catch(err => {
+          console.log('Video autoplay failed:', err);
+          // Fallback is already handled by the <img> tag inside <video>
         });
       }
-      
-      // Listen for changes in motion preference
-      const motionMediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-      motionMediaQuery.addEventListener('change', (e) => {
-        if (e.matches && avatar) {
-          avatar.pause();
-          toggleBtn.style.display = 'none';
-        } else if (avatar) {
-          avatar.play();
-          toggleBtn.style.display = 'block';
-        }
-      });
     });
 
     // Resume modal functionality
@@ -623,7 +566,7 @@
   <header class="u-clearfix u-header u-header" id="sec-43be">
     <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
       <a href="https://audreyhsiao.github.io" class="u-image u-image-1">
-        <img src="./src/images/logo.jpg" class=" logo-image">
+        <img src="./logo.png" class=" logo-image">
       </a>
       <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
         <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
@@ -688,26 +631,12 @@
                 align-items:center;
                 padding: 3%;">
                 <div class="avatar-container">
-                  <video 
-                    id="avatar" 
-                    class="avatar-video"
-                    autoplay 
-                    loop 
-                    muted 
-                    playsinline
-                    loading="lazy"
-                    width="200"
-                    height="200"
-                    aria-label="Animated avatar">
+                  <video id="avatar" class="avatar-video" autoplay loop muted playsinline width="300"
+                    height="300" aria-label="Animated avatar">
                     <source src="avatar.MP4" type="video/mp4">
                     <!-- Fallback image if video doesn't load -->
                     <img src="src/images/logo.png" alt="Avatar" class="avatar-fallback">
                   </video>
-                  <!-- Accessibility: Pause/Play button for reduced motion preference -->
-                  <button id="avatar-toggle" class="avatar-toggle" aria-label="Pause animation">
-                    <span class="visually-hidden">Pause animation</span>
-                    <i class="fa fa-pause" aria-hidden="true"></i>
-                  </button>
                 </div>
               </div>
               <p class="u-text description u-text-3 about">I am currently a Master’s of Computer Science at Rice
