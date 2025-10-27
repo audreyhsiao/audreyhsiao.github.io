@@ -174,12 +174,13 @@ main {
 }
 
 .description {
-	color: #c0c0c0;
-	font-family: "Fira Code", monospace;
+	font-family: "Courier New", Courier, monospace;
+	color: white !important;
 	font-size: 18px;
 }
 
 .description p {
+	color: #c0c0c0 !important;
 	font-size: 20px;
 	line-height: 1.6;
 }
@@ -204,8 +205,43 @@ a.menu-btn:hover {
 }
 
 .project-img {
+	display: block;
 	width: 100%;
 	height: auto;
+	object-fit: cover;
+	border-radius: 20px;
+	transition: transform 0.3s ease;
+}
+
+/* Images Row - for side-by-side images */
+.images-row {
+	display: flex;
+	gap: 20px;
+	margin: 20px 0;
+	width: 100%;
+	flex-wrap: wrap;
+}
+
+.images-row .project-img {
+	flex: 1;
+	min-width: 250px;
+	max-width: calc(100% - 10px);
+}
+
+.images-row .project-img:hover {
+	transform: scale(3.5);
+}
+
+/* Mobile responsive for images-row */
+@media (max-width: 991px) {
+	.images-row {
+		flex-direction: column;
+	}
+
+	.images-row .project-img {
+		max-width: 100%;
+		width: 100%;
+	}
 }
 
 .project-description {
@@ -401,7 +437,6 @@ a.menu-btn:hover {
 
 .project-description p {
 	color: #ccc;
-	font-family: "Fira Code", monospace;
 	font-size: 14px;
 	line-height: 1.6;
 	margin: 0;
@@ -627,11 +662,34 @@ a.menu-btn:hover {
 /* Modal Images Grid */
 .modal-images-grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 	gap: 20px;
 	margin-top: 10px;
 }
 
+/* Image Container - for actual project images */
+.modal-images-grid .image-container {
+	aspect-ratio: 16 / 9;
+	overflow: hidden;
+	border-radius: 10px;
+	background-color: rgba(0, 0, 0, 0.05);
+	border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.modal-images-grid .project-image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	border-radius: 10px;
+	transition: transform 0.3s ease;
+}
+
+.modal-images-grid .project-image:hover {
+	transform: scale(1.05);
+}
+
+/* Image Placeholder - for projects without images (fallback, now hidden by JS) */
 .modal-images-grid .image-placeholder {
 	background-color: rgba(0, 0, 0, 0.05);
 	border: 2px dashed rgba(0, 0, 0, 0.2);

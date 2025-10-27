@@ -147,10 +147,10 @@
             'Clean demo with image upload + free-form question'
           ],
           tech: ['Python', 'PyTorch', 'Hugging Face', 'Selenium', 'BeautifulSoup', 'ROUGE-L', 'BERTScore', 'Streamlit'],
-          links: [
-            { text: 'Demo', href: '#demo-artchat' },
-            { text: 'Code', href: '#code-artchat' },
-            { text: 'Report', href: '#report-artchat' }
+          images: [
+            // 'src/images/projects/artchat-1.png',
+            // 'src/images/projects/artchat-2.png',
+            // 'src/images/projects/artchat-3.png'
           ]
         },
         pbif: {
@@ -168,8 +168,9 @@
             'Automated PR descriptions with diffs'
           ],
           tech: ['Python', 'LangChain', 'Vector DB', 'Git CI/CD', 'Coverity', 'C'],
-          links: [
-            { text: 'Overview', href: '#overview-pbif' }
+          images: [
+            // 'src/images/projects/pbif-1.png',
+            // 'src/images/projects/pbif-2.png'
           ]
         },
         blockchain: {
@@ -187,8 +188,8 @@
             'Threshold tuning via confusion matrix'
           ],
           tech: ['Python', 'PyTorch', 'GAT', 'scikit-learn', 'Pandas', 'Bash'],
-          links: [
-            { text: 'Code', href: '#code-gnn' }
+          images: [
+            // 'src/images/projects/blockchain-1.png'
           ]
         },
         database: {
@@ -206,30 +207,32 @@
             'Catalog and CREATE TABLE support'
           ],
           tech: ['C++17', 'Linux', 'CMake', 'B+-tree', 'LRU'],
-          links: [
-            { text: 'Code', href: '#code-dbms' }
+          images: [
+            // 'src/images/projects/database-1.png',
+            // 'src/images/projects/database-2.png'
           ]
         },
-        movie: {
-          title: 'Movie Review App — Full-stack',
-          subtitle: 'React/React Native + Django REST',
-          meta: 'Jan 2025 – present · Solo project · Houston, TX',
-          tldr: 'Web + mobile app for reviews, search, and watchlist. Secure auth, paginated APIs, and clean UI.',
-          problem: 'A simple place to log films and share reviews across devices.',
-          built: 'Django REST API with JWT auth and pagination; React web and React Native clients with protected routes and validation; search, filters, infinite scroll, and watchlist.',
-          role: 'Designed schema, built APIs and UIs, set up basic CI (lint/test).',
-          impact: 'Smooth sign-up → review → share flow; modular API ready for tags or social login.',
+        womenownedtaipei: {
+          title: 'Women Owned Taipei — iOS & Web',
+          subtitle: 'SWIFTUI / NEXT.JS + SUPABASE / MAP + SEARCH',
+          meta: 'Oct 2025 – present · Solo project · Taipei, Taiwan',
+          tldr: 'A directory to discover and support women-owned businesses in Taipei.Search by category or keywords (typo-tolerant + semantic), explore on a map, save favorites, and earn rewards via check-ins.',
+          problem: 'Empowerment becomes real when we support women-owned businesses with action.',
+          built: 'iOS app (SwiftUI) and a web app (Next.js + TypeScript) with a clean, monochrome UI;Supabase backend: auth, data, rewards, and Edge Functions;Map explore with clustering and “near me” radius filter;Search service with fuzzy match + synonyms (e.g., “roses/lilies” → florist, “jeans” → denim);Saved (Want-to-Go) list with login; Rewards (check-in within 100m, referral codes)',
+          role: 'Product design, UX, data modeling, full-stack development, deployment, and testing.',
+          impact: 'Shipped an MVP that makes it simple to discover women-owned shops and support them with visits and redemptions. Built with accessibility and zh-TW/EN localization in mind to reach more locals and visitors.',
           highlights: [
-            'Auth flows with server-side validation',
-            'Review editor with drafts/autosave',
-            'Search + filters + infinite scroll',
-            'Personal stats (streaks, top genres)'
+            'Typo-tolerant & “divergent” search (Fuse.js + synonyms map)',
+            'Map with clustering, bottom-sheet business card, and “Open in Maps”',
+            'Rewards via Supabase Edge Function that validates check-in distance (≤ 100m, 1/day/business).',
+            '“Save”/unsave with optimistic UI and offline-friendly recent cache',
+            'zh-TW/English copy switch; all strings localized'
           ],
-          tech: ['React', 'React Native', 'Django REST', 'PostgreSQL', 'JWT', 'Postman'],
-          links: [
-            { text: 'Web', href: '#web-movie' },
-            { text: 'Mobile', href: '#mobile-movie' },
-            { text: 'API Code', href: '#code-movie' }
+          tech: ['iOS', 'SwiftUI', 'Tailwind', 'Supabase', 'SQL schema & RLS', 'Vitest/Testing Library', 'Vercel (web)'],
+          images: [
+            // 'src/images/projects/womenownedtaipei-1.png',
+            // 'src/images/projects/womenownedtaipei-2.png',
+            // 'src/images/projects/womenownedtaipei-3.png'
           ]
         },
         inventory: {
@@ -247,8 +250,8 @@
             'Business-readable visuals'
           ],
           tech: ['Python', 'Pandas', 'XGBoost', 'Random Forest', 'Linear Programming'],
-          links: [
-            { text: 'Report', href: '#report-inventory' }
+          images: [
+            // 'src/images/projects/inventory-1.png'
           ]
         },
         'llm-deployment': {
@@ -267,7 +270,7 @@
             'Vector database integration'
           ],
           tech: ['LangChain', 'OpenAI GPT', 'Pinecone', 'Chroma', 'Streamlit', 'FastAPI', 'Python'],
-          links: []
+          images: []
         },
         'model-finetuning': {
           title: 'Model Fine-tuning',
@@ -285,7 +288,7 @@
             'Specialized text classification'
           ],
           tech: ['Hugging Face Transformers', 'PyTorch Lightning', 'LoRA', 'BERT', 'Python'],
-          links: []
+          images: []
         },
         'pytorch-training': {
           title: 'PyTorch Training from Scratch',
@@ -303,7 +306,7 @@
             'Custom loss functions and optimizers'
           ],
           tech: ['PyTorch', 'Deep Learning', 'GNN', 'Computer Vision', 'Time Series', 'Python'],
-          links: []
+          images: []
         }
       };
 
@@ -344,6 +347,22 @@
 
             // Hide links section - only showing images
             document.querySelector('.modal-links').innerHTML = '';
+
+            // Display project images dynamically
+            const modalImagesSection = document.querySelector('.modal-images');
+            if (data.images && data.images.length > 0) {
+              const imagesHtml = '<h4>Images</h4><div class="modal-images-grid">' +
+                data.images.map(imgSrc =>
+                  `<div class="image-container">
+                    <img src="${imgSrc}" alt="Project screenshot" class="project-image" loading="lazy">
+                  </div>`
+                ).join('') + '</div>';
+              modalImagesSection.innerHTML = imagesHtml;
+              modalImagesSection.style.display = 'block';
+            } else {
+              // Hide images section if no images provided
+              modalImagesSection.style.display = 'none';
+            }
 
             modal.style.display = 'flex';
           }
@@ -580,17 +599,14 @@
         </div>
         <div class="u-nav-container">
           <ul class="u-nav">
-            <li class="u-nav-item"><a class="menu-btn    "
-                href="index.html" style="padding: 10px 20px;">Home</a></li>
-            <li class="u-nav-item"><a class="menu-btn"
-                href="#aboutMe" style="padding: 10px 20px;">About</a></li>
-            <li class="u-nav-item"><a class="menu-btn"
-                href="#selected-projects">Projects</a></li>
+            <li class="u-nav-item"><a class="menu-btn    " href="index.html" style="padding: 10px 20px;">Home</a></li>
+            <li class="u-nav-item"><a class="menu-btn" href="#aboutMe" style="padding: 10px 20px;">About</a></li>
+            <li class="u-nav-item"><a class="menu-btn" href="#selected-projects">Projects</a></li>
             <!-- Photography link temporarily hidden -->
             <!-- <li class="u-nav-item"><a class="menu-btn u-button-style u-nav-link u-text-hover-palette-2-base"
                 href="photography.html" style="padding: 10px 20px;">Photography</a></li> -->
-            <li class="u-nav-item"><a class="menu-btn u-button-style  "
-                href="#contact" style="padding: 10px 20px;">Contact</a></li>
+            <li class="u-nav-item"><a class="menu-btn u-button-style  " href="#contact"
+                style="padding: 10px 20px;">Contact</a></li>
 
           </ul>
         </div>
@@ -615,7 +631,7 @@
   </section>
 
   <section id="aboutMe" class="u-black u-clearfix wrapper animate fadeInDown" style="display: flex;">
-    <div class="u-clearfix u-sheet u-sheet-1 wrapper" >
+    <div class="u-clearfix u-sheet u-sheet-1 wrapper">
       <div class="u-clearfix u-expanded-width">
         <div class="u-layout">
           <div class=" introduction ">
@@ -624,7 +640,7 @@
 		padding-right: 5%;
     flex:100%; 
     max-height: 100%;">
-              <h3 class="u-text u-text-1 animate animate__animated animate__fadeInDown" >About me<br>
+              <h3 class="u-text u-text-1 animate animate__animated animate__fadeInDown">About me<br>
               </h3>
               <div class="animate__animated animate__fadeIn" style="display: flex;
                  justify-content: center; 
@@ -862,15 +878,15 @@
         </div>
       </div>
 
-      <div class="project-card" data-project="movie">
+      <div class="project-card" data-project="womenownedtaipei">
         <div class="project-title-wrapper">
-          <h3 class="project-title">Movie Review App — Full-stack</h3>
+          <h3 class="project-title">Women Owned Taipei — iOS & Web — Full-stack</h3>
         </div>
         <div class="project-meta">
-          <span class="project-subtitle">React/React Native + Django REST</span>
+          <span class="project-subtitle">SWIFTUI / NEXT.JS + SUPABASE / MAP + SEARCH</span>
         </div>
         <div class="project-description">
-          <p>Jan 2025 – present · Solo project · Houston, TX</p>
+          <p>Oct 2025 – present · Solo project · Taipei, Taiwan</p>
           <p>Web + mobile app for reviews, search, and watchlist. Secure auth, paginated APIs, and clean UI.</p>
         </div>
       </div>
@@ -966,6 +982,10 @@
 
                     <p class=" description">Determine the home's value in the current market for a listing price.
                     </p>
+                    <div class="images-row">
+                      <img src="src/images/projects/bj2.png" alt="Beijing housing" class="project-img">
+                      <img src="src/images/projects/bj.png" alt="Beijing housing" class="project-img">
+                    </div>
                     <button class="pink-button" role="button"
                       href="https://www.kaggle.com/code/theysaynounderscore/housing-data-visualization-in-bj">Kaggle
                       Page</button>
@@ -993,7 +1013,30 @@
           <h3 class="u-text u-text-1">Project Demo<br></h3>
         </div>
         <p class="description">
-          Watch a demonstration of my application development project.
+          <strong>Overview:</strong>
+
+          The AI-Powered Video Analyzer is a web application designed to make video learning smarter, faster, and more
+          engaging. Instead of passively watching long videos, users can interact with the content using AI-driven tools
+          that summarize, quiz, and explain key moments — helping them retain information more effectively.
+
+          This project integrates Gemini API to analyze video transcripts, extract important insights, and generate
+          personalized learning materials — all within an intuitive, minimal UI.
+        </p>
+
+        <strong>Key Features:</strong>
+
+        AI Summarization – Get concise takeaways from any educational or informational video.
+
+        Auto Quizzes & Flashcards – Test your understanding instantly with AI-generated questions.
+
+        <p class="description">Smart Notes with Timestamps – Add notes tied to specific video moments and ask the AI to
+          elaborate.</p>
+
+        <p class="description">Context-Aware Explanations – Click “Explain” to receive targeted clarifications based on
+          the current section.</p>
+
+        Learning History – Track watch time, quiz results, and personal progress in your browser.
+        Watch a demonstration of my application development project.</p>
         </p>
       </div>
       <div class="video-demo-right">
@@ -1005,8 +1048,9 @@
           </iframe>
         </div>
         <p class="video-caption description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+          The application is a client-side, single-page web application built with React. It functions as an agent by
+          combining user-driven intent with the powerful multimodal and function-calling capabilities of the Gemini API
+          to provide interactive analysis of video content.
         </p>
       </div>
     </div>
@@ -1047,7 +1091,8 @@
                 </div>
               </div>
             </div>
-            <div class="u-align-right u-container-style u-layout-cell u-right-cell u-size-30 u-layout-cell-2" id="contact">
+            <div class="u-align-right u-container-style u-layout-cell u-right-cell u-size-30 u-layout-cell-2"
+              id="contact">
               <div class="u-container-layout u-valign-middle u-container-layout-2">
                 <h3 class="u-text u-text-1">happy to see you</h3>
 
