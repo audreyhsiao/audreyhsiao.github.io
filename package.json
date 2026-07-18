@@ -1,0 +1,24 @@
+{
+  "name": "audreyhsiao.github.io",
+  "version": "1.0.0",
+  "description": "A responsive personal portfolio website showcasing my projects, skills, and experience in Computer Science, AI/ML, and Full-Stack Development.",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/css/tailwind-input.css -o ./src/css/style.css --minify",
+    "watch:css": "tailwindcss -i ./src/css/tailwind-input.css -o ./src/css/style.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/audreyhsiao/audreyhsiao.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/audreyhsiao/audreyhsiao.github.io/issues"
+  },
+  "homepage": "https://github.com/audreyhsiao/audreyhsiao.github.io#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
+  }
+}
