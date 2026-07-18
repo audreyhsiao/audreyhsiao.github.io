@@ -85,22 +85,16 @@ A responsive personal portfolio website showcasing my projects, skills, and expe
 audreyhsiao.github.io/
 ├── index.html                          # Main page
 ├── photography.html                    # Photography page (hidden from nav)
-├── contact.php                         # Contact form handler
 ├── README.md                           # This file
-├── HOW_TO_ADD_PROJECT_IMAGES.md       # Guide for adding project images
-├── PROJECT_IMAGES_IMPLEMENTATION.md    # Technical implementation details
+├── HOW_TO_ADD_PROJECT_IMAGES.md        # Guide for adding project images
 │
 ├── src/
 │   ├── css/
-│   │   ├── style_clean.css            # Main stylesheet
-│   │   ├── animated.css               # Animation styles
-│   │   ├── Blog-Template.css          # Blog styling
-│   │   └── Post-Template.css          # Post styling
+│   │   └── style_clean.css            # Main stylesheet
 │   │
 │   ├── js/
 │   │   ├── jquery.js                  # jQuery library
-│   │   ├── nicepage.js                # Page interactions
-│   │   └── typed.js                   # Typewriter effect
+│   │   └── nicepage.js                # Page interactions
 │   │
 │   ├── images/
 │   │   ├── logo.png                   # Site logo (converted from HEIC)
@@ -121,13 +115,8 @@ audreyhsiao.github.io/
 │       ├── medium.png
 │       └── ...
 │
-├── blog/                              # Blog posts
-│   ├── blog.html
-│   ├── post-1.html
-│   └── ...
-│
 ├── private/                           # Secure files (gitignored)
-│   └── Audrey_Hsiao_Resume.pdf
+│   └── ML Yu-Chu (Audrey) Hsiao_Resume.pdf
 │
 └── api/                               # Serverless functions
     └── get-resume.js                  # Password-protected resume download
