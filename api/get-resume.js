@@ -1,7 +1,6 @@
 // Vercel serverless function for secure resume download
 // This function handles password validation and file streaming
 
-const crypto = require('crypto');
 const fs = require('fs');
 const path = require('path');
 
@@ -109,7 +108,7 @@ export default async function handler(req, res) {
     rateLimitStore.delete(clientIP);
 
     // Option A: Stream local file (recommended for simple deployment)
-    const resumePath = path.join(process.cwd(), 'private', 'Audrey_Hsiao_Resume.pdf');
+    const resumePath = path.join(process.cwd(), 'private', 'ML Yu-Chu (Audrey) Hsiao_Resume.pdf');
     
     // Check if file exists
     if (!fs.existsSync(resumePath)) {
